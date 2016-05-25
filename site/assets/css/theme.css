@@ -1,0 +1,10 @@
+header {
+    background: #d9edf7;
+    padding: 1%;
+}
+
+header nav {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16pt;    
+}
