@@ -16,10 +16,6 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-h3.h1 {
-    color: #565454;
-}
-
 header {
     background: rgba(153, 153, 153, 0.05);
     /*height: 100px;*/
@@ -43,16 +39,10 @@ header nav {
     /*padding-top: 15px;  */
 }
 
-/*header nav li a,
+header nav li a,
 header nav li a:focus {
-    color: #666;
+    /*color: #666;*/
     color: #FDB932;
-}*/
-
-
-header a.navbar-brand {
-    top: -30px;
-    position: relative;
 }
 
 header nav li a:hover {
@@ -69,8 +59,7 @@ section {
 
 section hr {
     width: 100px;
-    border: 1px solid rgba(0, 0, 255, 0.5);
-    margin-bottom: 6%;
+    border: 2px solid rgba(0, 0, 255, 0.5);
 }
 
 ul.nav.nav-pills.navbar-right li a:hover {
@@ -110,14 +99,8 @@ ul.nav.nav-pills.navbar-right li a:hover {
   height: 500px;
 }
 
-section#associados img {
-    /* background: #236E47; */
-    /* width: 100%; */
-    /* height: auto; */
-    /*border-radius: 19px;*/
-    /*border: 1px solid #ccc;*/
-    padding: 10%;
-    /*margin: 10%;*/
+#associados > div > div {
+    text-align: center;
 }
 
 #newsletter {

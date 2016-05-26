@@ -1,26 +1,21 @@
 <html lang="pt-br">
 
 <head>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-        crossorigin="anonymous">
-
-    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-    <!-- Latest compiled and minified CSS -->
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>AJE-MS — Associação de Jovens Empreendedores</title>    
+    
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/theme.css">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
-        crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="assets/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-        crossorigin="anonymous"></script>
-
-    <!-- Custom styles for this template -->
-    <!--<link href="http://getbootstrap.com/examples/carousel/carousel.css" rel="stylesheet">-->
-
+    <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+    
+    <script src="assets/js/bootstrap.min.js"></script>
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
 </head>
 
@@ -34,25 +29,56 @@
             <li><a href="#"><i class="fa fa-linkedin-square" style="font-size: 1.5em;" aria-hidden="true"></i></a></li>
         </ul>
     </nav>
-    
-    <header class="container-fluid">
-        <div class="row">
-            <div class="col-md-3">
-                <img src="assets/img/logo.png" />
-            </div>
+ 
+ <header>   
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="assets/img/logo.png" class="img-responsive" /></a>
+    </div>
 
-            <div class="col-md-9">
-                <nav>
-                    <ul class="nav nav-pills navbar-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">sobre</a></li>
-                        <li><a href="#">parceiros</a></li>
-                        <li><a href="#">serviços</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>        
-    </header>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!--<ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><div class="fb-like" data-href="https://facebook.com/aje.matogrossodosul" data-layout="button_count" data-action="like" data-show-faces="false"
+                data-share="false"></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>-->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">sobre</a></li>
+        <li><a href="#">parceiros</a></li>
+        <li><a href="#">serviços</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</header>
 
 
     <!-- Carousel
@@ -110,8 +136,7 @@
                     <div class="caption">
                         <h3>Thumbnail label</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula vehicula enim, at lacinia arcu maximus at. Donec vulputate leo ac urna auctor, a finibus ligula ultricies</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default"
-                                role="button">Button</a></p>
+                        <p><a href="#" class="btn btn-success btn-lg btn-block" role="button">Button</a></p>
                     </div>
                 </div>
             </div>
@@ -142,100 +167,43 @@
   
     
     <section id="associados" class="container-fluid">
-        <h3 class="h1" style="text-align:center">Alguns Associados</h3>
+        <h3 class="h1" style="text-align:center">Associados</h3>
         <hr/>
-        <div class="row">
-            <div class="col-md-1">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-            <div class="col-md-1">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-            <div class="col-md-1">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-            <div class="col-md-1">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-            <div class="col-md-1">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-            <div class="col-md-1">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-            <div class="col-md-1">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-            <div class="col-md-1">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-            <div class="col-md-1">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-            <div class="col-md-1">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-            <div class="col-md-1">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-            <div class="col-md-1">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-        </div>
-        
-        <br />
-        
+     
+        <center>
         <div class="row">
             <div class="col-md-2">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
+                <h3>Empresa a</h3>
+                <img src="assets/img/associados/2.png"  class="img-responsive img-thumbnail" alt="Responsive image img-thumbnail">
             </div>
             <div class="col-md-2">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
+                <h3>Empresa a</h3>
+                <img src="assets/img/associados/3.png"  class="img-responsive img-thumbnail" alt="Responsive image img-thumbnail">
             </div>
             <div class="col-md-2">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
+                <h3>Empresa a</h3>
+                <img src="assets/img/associados/6.png"  class="img-responsive img-thumbnail" alt="Responsive image img-thumbnail">
             </div>
             <div class="col-md-2">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
+                <h3>Empresa a</h3>
+                <img src="assets/img/associados/aeacg.png"  class="img-responsive img-thumbnail" alt="Responsive image img-thumbnail">
             </div>
             <div class="col-md-2">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
+                <h3>Empresa a</h3>
+                <img src="assets/img/associados/agpms.png"  class="img-responsive img-thumbnail" alt="Responsive image img-thumbnail">
             </div>
             <div class="col-md-2">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
+                <h3>Empresa a</h3>
+                <img src="assets/img/associados/crajr.png"  class="img-responsive img-thumbnail" alt="Responsive image img-thumbnail">
             </div>
         </div>
+            <br/>
+            <div class="col-md-12">
+                <p class="lead"><a class="btn btn-lg btn-success disabled" href="#">Veja mais</a></p>
+            </div>
         
-        <br />
-        
-        <div class="row">
-            <div class="col-md-3">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-            <div class="col-md-3">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-            <div class="col-md-3">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-            <div class="col-md-3">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-        </div>
-        
-        <br />
-        
-        <div class="row">
-            <div class="col-md-4">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-            <div class="col-md-4">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-            <div class="col-md-4">
-                <img src="assets/img/logo.png"  class="img-responsive" alt="Responsive image img-thumbnail">
-            </div>
-        </div>
+        </center>
+      
     </section>
     
  
@@ -262,35 +230,66 @@
 
 
 
-    <footer class="container-fluid">
-        <!--<p class="text-center">&copy; 2017 ByteGod IT Solutions</p>
-        <p class="text-center">Av. Afonso Pena, 5723 Sala 1504 | Evolution Business Center | Royal Park CEP 79 031-010 |Telefone 67 3201 2137| Cel
-            67 9294 9351</p>-->
-            
-           <!--<div class="row">
-               <div class="col-md-4">
-                   <h4>Sobre</h4>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada lacus a ligula sodales, id porttitor turpis iaculis. Sed pellentesque maximus nisl.</p>
-               </div>
-               <div class="col-md-4">
-                   <h4>Contato</h4>
-                   <div class="Contact-Footer">
-                        <ul style="list-style:none">                            
-                            <li><i class="fa fa fa-map-marker"></i> Rua Sem Nome, 321</li>        
-                            <li><i class="fa fa fa-phone"></i> +55 (67) 8181-3454</li>        
-                            <li><i class="fa fa fa-envelope"></i> contato@agpms.com.br</li>
-                        </ul>
-                    </div>
-               </div>
-               <div class="col-md-4"></div>
-            </div> -->
-            
-           <div class="row">
-               <p class="text-center">&copy; 2016 <img width="25px" src="http://bytegod.com.br/img/bg.png" /> ByteGod IT Solutions.</p>
-               <p class="text-center"><i class="fa fa fa-map-marker"></i> Av. Afonso Pena, 5723 &mdash; Sala 1504 &mdash; CEP 79.031-010 <i class="fa fa fa-phone"></i> +55 (67) 3201.2137 | +55 (67) 9294.9351</p>
-            </div>       
+   <footer class="container-fluid">
+
+    <script>
+        // Primeiro ano da AJE-MS
+        var s_year = "2011";
+        // Ano atual        
+        var a_year = new Date().getYear() + 1900;
         
-    </footer>
+        var years = s_year + " &mdash; " + a_year;
+    </script>
+
+    <div class="row">
+          <div class="col-md-4">
+              <h3>Facebook</h3>
+            <div class="fb-page" data-href="https://www.facebook.com/aje.matogrossodosul" data-tabs="eventos" data-small-header="false"
+                data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                <div class="fb-xfbml-parse-ignore">
+                    <blockquote cite="https://www.facebook.com/aje.matogrossodosul"><a href="https://www.facebook.com/aje.matogrossodosul">Aje-MS</a></blockquote>
+                </div>
+            </div>
+        </div> <!-- / facebook widget -->
+        
+        <div class="col-md-4">
+              <h3>Contatos e Redes Sociais</h3>
+            <p><i class="fa fa-map-marker"></i> Av. Afonso Pena, 5723 &mdash; Sala 1504 &mdash; CEP 79.031-010</p>
+            <p><i class="glyphicon glyphicon-phone-alt"></i> +55 (67) 3201.2137</p>
+            <p><i class="glyphicon glyphicon-phone"></i> +55 (67) 9294.9351</p>
+            <p><i class="fa fa-envelope"></i> example@example.com</p>
+            <p><i class="fa fa-facebook"></i>/aje.matogrossodosul</p>
+            <p><i class="fa fa-instagram"></i>/aje.matogrossodosul</p>
+            <p><i class="fa fa-linkedin"></i>/aje.matogrossodosul</p>
+        </div>
+      
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <p>Copyright &copy;
+                <script>
+                    document.write(years);
+                </script> Associação de Jovens Empreendedores.</p>
+        </div>
+        <div class="col-md-6">
+            <p class="text-right">Desenvolvido com &hearts; por <img width="25px" src="assets/img/bg.png" /> ByteGod IT Solutions.</p>
+        </div>
+    </div>
+
+</footer>
+    
+    
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.6&appId=1432431656988526";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
