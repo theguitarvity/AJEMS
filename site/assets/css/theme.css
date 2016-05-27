@@ -1,66 +1,38 @@
-#nav-top {
-    font-size: 10pt;
-    text-transform: uppercase;
-    font-weight: 300;
-    border-bottom: 1px solid #ccc;
-    }
+/*  FONTES
+------------------------------------------------------------------------------*/
 
-#nav-top ul li {
-    border-right: 1px solid #ccc;
-    /*padding: 1em;*/
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v11/yg0glPPxXUISnKUejCX4qfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
 }
+
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v11/pEobIV_lL25TKBpqVI_a2w.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/*  GLOBAL
+------------------------------------------------------------------------------*/
 
 body {
     padding: 0;
     margin: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-h3.h1 {
-    color: #565454;
-}
-
-header {
-    background: rgba(153, 153, 153, 0.05);
-    /*height: 100px;*/
-    /*background: linear-gradient(to bottom, #fff, #555));*/
-    /*padding: 3% 0;*/
-    
-  /*align-items: center;*/
-  /*display: flex;*/
-  vertical-align: -webkit-baseline-middle;
+    background: rgba(221, 221, 221, 0.1);
 }
 
 nav {
     font-family: Oswald;
 }
 
-header nav {
-    text-transform: uppercase;
-    font-size: 16pt;  
-    height: 120px;
-    margin-bottom: -20px;
-    /*padding-top: 15px;  */
-}
-
-/*header nav li a,
-header nav li a:focus {
-    color: #666;
-    color: #FDB932;
-}*/
-
-
-header a.navbar-brand {
-    top: -30px;
-    position: relative;
-}
-
-header nav li a:hover {
-    color: #555;
-}
-
-header #facebook-like-top {
-    /*top: 50%;*/
+h3.h1 {
+    color: #565454;
 }
 
 section {
@@ -73,65 +45,92 @@ section hr {
     margin-bottom: 6%;
 }
 
+/*  MENU TOPO
+------------------------------------------------------------------------------*/
+
+#nav-top {
+    font-size: 10pt;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+#nav-top ul li {
+    border-right: 1px solid #e7e7e7;
+}
+
 ul.nav.nav-pills.navbar-right li a:hover {
     background: transparent;
 }
 
-#filia-se {
-    /*background: #FDB932;
-    border-bottom: 1px solid #FDB932;
-    padding: 0;
-    margin: 0;*/
+/*  HEADER
+------------------------------------------------------------------------------*/
+
+header {
+    background: rgba(153, 153, 153, 0.05);
+    vertical-align: -webkit-baseline-middle;
 }
 
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
+header nav {
+    text-transform: uppercase;
+    font-size: 16pt;  
+    height: 120px;
+    margin-bottom: -20px;
+}
 
-/* Carousel base class */
+header a.navbar-brand {
+    top: -30px;
+    position: relative;
+}
+
+header nav li a:hover {
+    color: #555;
+}
+
+/*  SLIDE
+------------------------------------------------------------------------------*/
+
 .carousel {
-  height: 500px;
-  margin-bottom: 60px;
-}
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  z-index: 10;
+    height: 500px;
+    margin-bottom: 60px;
 }
 
-/* Declare heights because of positioning of img element */
+.carousel-caption {
+    z-index: 10;
+}
+
 .carousel .item {
-  height: 500px;
-  background-color: #777;
+    height: 500px;
+    background-color: #777;
 }
 .carousel-inner > .item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
 }
 
-section#associados img {
-    /* background: #236E47; */
-    /* width: 100%; */
-    /* height: auto; */
-    /*border-radius: 19px;*/
-    /*border: 1px solid #ccc;*/
+/*  ASSOCIADOS
+------------------------------------------------------------------------------*/
+
+#associados img {
     padding: 10%;
-    /*margin: 10%;*/
 }
+
+/*  CAT
+------------------------------------------------------------------------------*/
 
 #newsletter {
-    /*background: #236E47;*/
     background-image: linear-gradient(to bottom, #fff, #D9EDF7);
-    /*background: #555;*/
-    /*color: #f5f5f5;*/
     padding: 10% 0;
     text-align: center;
 }
 
+/*  FOOTER
+------------------------------------------------------------------------------*/
+
 footer {
     background:#D9EDF7;
-    /*color:#fff;*/
     border-top: 1px solid #ccc;
     padding: 2% 0;
 }

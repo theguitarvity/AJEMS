@@ -62,9 +62,6 @@ section hr {
     border: 2px solid rgba(0, 0, 255, 0.5);
 }
 
-ul.nav.nav-pills.navbar-right li a:hover {
-    background: transparent;
-}
 
 #filia-se {
     /*background: #FDB932;
