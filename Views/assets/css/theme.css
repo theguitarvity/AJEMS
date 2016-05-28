@@ -1,3 +1,12 @@
+/*  LAYOUT DESENVOLVIDO POR BYTEGOD IT SOLUTIONS WWW.BYTEGOD.COM.BR
+*
+*   DESIGNER        :   MATEUS GABI WWW.MATEUSGABI.TK
+*
+*   CORES DEFAULT   :   236E47 [VERDE]
+*                   :   FDB932 [AMARELO]
+------------------------------------------------------------------------------*/
+
+
 /*  FONTES
 ------------------------------------------------------------------------------*/
 
@@ -91,7 +100,6 @@ header nav li a:hover {
 
 .carousel {
     height: 500px;
-    margin-bottom: 60px;
 }
 
 .carousel-caption {
@@ -100,7 +108,7 @@ header nav li a:hover {
 
 .carousel .item {
     height: 500px;
-    background-color: #777;
+    background-color: #D9EDF7;
 }
 .carousel-inner > .item > img {
     position: absolute;
@@ -108,6 +116,48 @@ header nav li a:hover {
     left: 0;
     min-width: 100%;
     height: 500px;
+}
+
+/*  INFOS
+------------------------------------------------------------------------------*/
+
+#infos {
+    background: #236E47;
+    color: #fff;
+    padding: 0;
+    text-shadow: 1px 0px 0px #000;
+    font-size: 13pt;
+    text-align: center;
+}
+
+.info-item {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10%;
+    color: white;
+    font-size: 60px;
+}
+
+@media only screen and (max-width: 992px) {
+    #infos {
+        padding: 2% 0;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #infos{
+        background:  url(https://pixabay.com/static/uploads/photo/2015/04/20/06/43/meeting-room-730679_960_720.jpg) center center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    #infos > div {
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: auto;
+        /*margin: -125px 0;*/
+        padding: 10% 0;
+    }
+
 }
 
 /*  ASSOCIADOS

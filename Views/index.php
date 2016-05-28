@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>AJE-MS — Associação de Jovens Empreendedores</title>    
+        <title>AJE-MS — Associação dos Jovens Empreendedores</title>    
 
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/bootstrap.css">
@@ -20,7 +20,7 @@
     </head>
 
     <body>
-        <nav id="nav-top" class="container-fluid">
+        <nav id="nav-top" class="container">
             <ul class="nav nav-pills navbar-right">
                 <li><a href="#">área restrita</a></li>
                 <li id="filia-se"><a href="#">filia-se</a></li>
@@ -32,7 +32,7 @@
 
         <header>   
             <nav class="navbar navbar-default">
-                <div class="container-fluid">
+                <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -52,12 +52,13 @@
                             <li><a href="#">serviços</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
+                </div><!-- /.container -->
             </nav>
         </header>
 
-        <!-- Carousel
-  ================================================== -->
+        <!-- SLIDE
+        ----------------------------------------------------------------------->
+
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -105,7 +106,40 @@
                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
-        </div><!-- /.carousel -->
+        </div>
+
+        <!-- /.SLIDE -->
+
+
+
+        <!-- INFOS
+        ----------------------------------------------------------------------->
+
+        <section id="infos">
+            <div class="container">
+                <div class="col-md-3">
+                    <span class="info-item img-circle glyphicon glyphicon-book"></span>
+                    <h4 class="h2">O que é a AJE-MS?</h4>
+                    <p>É uma entidade classista, sem fins lucrativos, que possui como objetivos o fomento e a difusão da cultura empreendedora e a formação de novas lideranças que visem a representação do jovem empreendedor.</p>
+                </div>
+                <div class="col-md-3">
+                    <span class="info-item img-circle glyphicon glyphicon-map-marker"></span>
+                    <h4 class="h2">Qual o nosso objetivo ?</h4>
+                    <p>Contribuir com a formação de novas lideranças no meio empresarial, através de eventos voltados ao desenvolvimento dos nossos associados, e disseminar a cultura empreendedora ao público em geral. </p>
+                </div>
+                <div class="col-md-3">
+                    <span class="info-item img-circle glyphicon glyphicon-question-sign"></span>
+                    <h4 class="h2">O que fazemos ?</h4>
+                    <p>Realizamos eventos e promovemos missões empresariais e cursos que congregam nossos associados, voltados a contribuir para a sua formação como líderes, além de promovermos ações de cunho social. </p>
+                </div>
+                <div class="col-md-3">
+                    <span class="info-item img-circle fa fa-users" style="font-size: 60px"></span>
+                    <h4 class="h2">Como associar-se ?</h4>
+                    <p>Preencha o formulário e efetue o pagamento da sua taxa de associação. Direcionado aos jovens empreendedores ou intra-empreendedores, empresários ou universitário inspirados pela desejo de transformação e de conexão ao ambiente empreendedor. </p>
+                </div>
+            </div>
+
+        </section>        
 
         <section class="container">
             <div class="row featurette">
@@ -116,7 +150,7 @@
                     <p class="lead">Venha conosco conhecer a trajetória destes dois jovens empreendedores, e um pouco mais de dois dos segmentos em grande expansão, mesmo em época de crise. </p>
 
                     <p class="lead">Evento Gratuito e com Emissão de Certificado de Horas. #ajems #workchoppajems #empreendedorismo #jovensempreendedores</p>
-                    
+
                     <p class="lead"><a href="#" class="btn btn-lg btn-primary disabled">Inscreva-se</a></p>
                 </div>
                 <div class="col-md-5">                    
@@ -127,7 +161,7 @@
         </section>
 
 
-        <section class="container-fluid">
+        <section class="container">
             <div class="row">
                 <h3 class="h1" style="text-align:center">Eventos</h3>
                 <hr/>
@@ -167,7 +201,7 @@
         </section>  
 
 
-        <section id="associados" class="container-fluid">
+        <section id="associados" class="container">
             <h3 class="h1" style="text-align:center">Associados</h3>
             <hr/>
 
@@ -178,23 +212,23 @@
                         <img src="assets/img/associados/2.png"  class="img-responsive img-thumbnail" alt="Responsive image img-thumbnail">
                     </div>
                     <div class="col-md-2">
-                        <h3>Empresa a</h3>
+                        <h3>Empresa b</h3>
                         <img src="assets/img/associados/3.png"  class="img-responsive img-thumbnail" alt="Responsive image img-thumbnail">
                     </div>
                     <div class="col-md-2">
-                        <h3>Empresa a</h3>
+                        <h3>Empresa c</h3>
                         <img src="assets/img/associados/6.png"  class="img-responsive img-thumbnail" alt="Responsive image img-thumbnail">
                     </div>
                     <div class="col-md-2">
-                        <h3>Empresa a</h3>
+                        <h3>Empresa d</h3>
                         <img src="assets/img/associados/aeacg.png"  class="img-responsive img-thumbnail" alt="Responsive image img-thumbnail">
                     </div>
                     <div class="col-md-2">
-                        <h3>Empresa a</h3>
+                        <h3>Empresa e</h3>
                         <img src="assets/img/associados/agpms.png"  class="img-responsive img-thumbnail" alt="Responsive image img-thumbnail">
                     </div>
                     <div class="col-md-2">
-                        <h3>Empresa a</h3>
+                        <h3>Empresa f</h3>
                         <img src="assets/img/associados/crajr.png"  class="img-responsive img-thumbnail" alt="Responsive image img-thumbnail">
                     </div>
                 </div>
@@ -231,15 +265,15 @@
 
 
 
-        <footer class="container-fluid">
+        <footer class="container">
 
             <script>
                 // Primeiro ano da AJE-MS
-                var s_year = "2011";
+                var s_year = 2016;
                 // Ano atual        
                 var a_year = new Date().getYear() + 1900;
 
-                var years = s_year + " &mdash; " + a_year;
+                var years = (s_year == a_year) ? s_year : s_year + " &mdash; " + a_year;
             </script>
 
             <div class="row">
@@ -276,10 +310,10 @@
                     <p>Copyright &copy;
                         <script>
                             document.write(years);
-                        </script> Associação de Jovens Empreendedores.</p>
+                        </script> Associação dos Jovens Empreendedores.</p>
                 </div>
                 <div class="col-md-6">
-                    <p class="text-right">Desenvolvido com &hearts; por <img width="25px" src="assets/img/bg.png" /> ByteGod IT Solutions.</p>
+                    <p class="text-right">Desenvolvido com &hearts; por <a href="http://bytegod.com.br"><img width="25px" src="assets/img/bg.png" /> ByteGod IT Solutions</a>.</p>
                 </div>
             </div>
 
@@ -302,6 +336,7 @@
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
         <script>
             window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
         </script>
