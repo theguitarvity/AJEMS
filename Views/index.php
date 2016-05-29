@@ -119,22 +119,22 @@
             <div class="container">
                 <div class="col-md-3">
                     <span class="info-item img-circle glyphicon glyphicon-book"></span>
-                    <h4 class="h2">O que é a AJE-MS?</h4>
+                    <h4 class="h3">O que é a AJE-MS?</h4>
                     <p>É uma entidade classista, sem fins lucrativos, que possui como objetivos o fomento e a difusão da cultura empreendedora e a formação de novas lideranças que visem a representação do jovem empreendedor.</p>
                 </div>
                 <div class="col-md-3">
                     <span class="info-item img-circle glyphicon glyphicon-map-marker"></span>
-                    <h4 class="h2">Qual o nosso objetivo ?</h4>
+                    <h4 class="h3">Qual o nosso objetivo ?</h4>
                     <p>Contribuir com a formação de novas lideranças no meio empresarial, através de eventos voltados ao desenvolvimento dos nossos associados, e disseminar a cultura empreendedora ao público em geral. </p>
                 </div>
                 <div class="col-md-3">
-                    <span class="info-item img-circle glyphicon glyphicon-question-sign"></span>
-                    <h4 class="h2">O que fazemos ?</h4>
+                    <span class="info-item img-circle glyphicon glyphicon-bullhorn"></span>
+                    <h4 class="h3">O que fazemos ?</h4>
                     <p>Realizamos eventos e promovemos missões empresariais e cursos que congregam nossos associados, voltados a contribuir para a sua formação como líderes, além de promovermos ações de cunho social. </p>
                 </div>
                 <div class="col-md-3">
                     <span class="info-item img-circle fa fa-users" style="font-size: 60px"></span>
-                    <h4 class="h2">Como associar-se ?</h4>
+                    <h4 class="h3">Como associar-se ?</h4>
                     <p>Preencha o formulário e efetue o pagamento da sua taxa de associação. Direcionado aos jovens empreendedores ou intra-empreendedores, empresários ou universitário inspirados pela desejo de transformação e de conexão ao ambiente empreendedor. </p>
                 </div>
             </div>
@@ -265,7 +265,7 @@
 
 
 
-        <footer class="container">
+        <footer class="container-fluid">
 
             <script>
                 // Primeiro ano da AJE-MS
@@ -276,7 +276,7 @@
                 var years = (s_year == a_year) ? s_year : s_year + " &mdash; " + a_year;
             </script>
 
-            <div class="row">
+            <div class="container">
                 <div class="col-md-4">
                     <h3>Facebook</h3>
                     <div class="fb-page" data-href="https://www.facebook.com/aje.matogrossodosul" data-tabs="eventos" data-small-header="false"
@@ -305,7 +305,7 @@
             </div>
             <br />
             <br />
-            <div class="row">
+            <div class="container">
                 <div class="col-md-6">
                     <p>Copyright &copy;
                         <script>

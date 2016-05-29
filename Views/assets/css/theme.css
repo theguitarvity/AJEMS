@@ -126,7 +126,7 @@ header nav li a:hover {
     color: #fff;
     padding: 0;
     text-shadow: 1px 0px 0px #000;
-    font-size: 13pt;
+    /*font-size: 13pt;*/
     text-align: center;
 }
 
@@ -139,7 +139,7 @@ header nav li a:hover {
 
 @media only screen and (max-width: 992px) {
     #infos {
-        padding: 2% 0;
+        padding: 4% 0;
     }
 }
 
