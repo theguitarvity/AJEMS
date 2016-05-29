@@ -4,6 +4,8 @@
 *
 *   CORES DEFAULT   :   236E47 [VERDE]
 *                   :   FDB932 [AMARELO]
+*
+*   IMAGENS: https://pixabay.com/pt/computador-port%C3%A1til-mouse-lista-1385700/
 ------------------------------------------------------------------------------*/
 
 
@@ -145,7 +147,8 @@ header nav li a:hover {
 
 @media only screen and (min-width: 992px) {
     #infos{
-        background:  url(https://pixabay.com/static/uploads/photo/2015/04/20/06/43/meeting-room-730679_960_720.jpg) center center;
+        /*background:  url(https://pixabay.com/static/uploads/photo/2015/04/20/06/43/meeting-room-730679_960_720.jpg) center center;*/
+        background: url(../img/laptop-1385700.jpg) center center;
         background-size: 100%;
         background-repeat: no-repeat;
     }

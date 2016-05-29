@@ -7,12 +7,13 @@
 
         <title>AJE-MS — Associação dos Jovens Empreendedores</title>    
 
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/css/AJE-MS-theme.css">
+        <link rel="stylesheet" href="assets/css/AJE-MS-theme.min.css">
+        <link rel="stylesheet" href="assets/css/AJE-MS.css">
+        <link rel="stylesheet" href="assets/css/AJE-MS.min.css">
         <link rel="stylesheet" href="assets/css/theme.css">
-        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
 
-        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/AJE-MS.min.js"></script>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <!--<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>-->
@@ -109,14 +110,34 @@
         </div>
 
         <!-- /.SLIDE -->
+ 
 
+        <section class="container">
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">WORKCHOPP.<span class="text-muted"> O tradicional hapy hour da Associação dos Jovens Empreendedores e Empresários de Mato Grosso do Sul, e agora em dose dupla!!!</span></h2><br/>
+                    <p class="lead">No próximo dia 17/05/2016, iremos receber a Youtuber, Blogueira, Designer de Moda, Publicitária e Maquiadora Profissional, <i>Lívia Tosta</i>, proprietária da “Boutique de Beaute”, e <i>Renan Reggiani</i>, o biólogo que resolveu virar barbeiro, e montou com mais um amigo, a “Hard Word Tatto And Barbershop”, pioneira no ramo de tatuagem e barbearia em Campo Grande (MS).</p> 
 
+                    <p class="lead">Venha conosco conhecer a trajetória destes dois jovens empreendedores, e um pouco mais de dois dos segmentos em grande expansão, mesmo em época de crise. </p>
 
+                    <p class="lead">Evento Gratuito e com Emissão de Certificado de Horas. #ajems #workchoppajems #empreendedorismo #jovensempreendedores</p>
+
+                    <p class="lead"><a href="#" class="btn btn-lg btn-primary disabled">Inscreva-se</a></p>
+                </div>
+                <div class="col-md-5">                    
+                    <!--data-src="holder.js/400x400/auto"-->
+                    <img id="workchopp-img" width="100%" class="img-thumbnail featurette-image img-responsive center-block" src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/13179204_1033086236757977_4456101136849385387_n.jpg?oh=7cede92111c7b2bf919d78602714e7c3&oe=57E6650D" srcalt="Generic placeholder image">
+                </div>
+            </div>
+        </section>
+        
+        
         <!-- INFOS
         ----------------------------------------------------------------------->
 
         <section id="infos">
-            <div class="container">
+            <div>
+                <div class="container">
                 <div class="col-md-3">
                     <span class="info-item img-circle glyphicon glyphicon-book"></span>
                     <h4 class="h3">O que é a AJE-MS?</h4>
@@ -137,28 +158,10 @@
                     <h4 class="h3">Como associar-se ?</h4>
                     <p>Preencha o formulário e efetue o pagamento da sua taxa de associação. Direcionado aos jovens empreendedores ou intra-empreendedores, empresários ou universitário inspirados pela desejo de transformação e de conexão ao ambiente empreendedor. </p>
                 </div>
-            </div>
-
-        </section>        
-
-        <section class="container">
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading">WORKCHOPP.<span class="text-muted"> O tradicional hapy hour da Associação dos Jovens Empreendedores e Empresários de Mato Grosso do Sul, e agora em dose dupla!!!</span></h2><br/>
-                    <p class="lead">No próximo dia 17/05/2016, iremos receber a Youtuber, Blogueira, Designer de Moda, Publicitária e Maquiadora Profissional, <i>Lívia Tosta</i>, proprietária da “Boutique de Beaute”, e <i>Renan Reggiani</i>, o biólogo que resolveu virar barbeiro, e montou com mais um amigo, a “Hard Word Tatto And Barbershop”, pioneira no ramo de tatuagem e barbearia em Campo Grande (MS).</p> 
-
-                    <p class="lead">Venha conosco conhecer a trajetória destes dois jovens empreendedores, e um pouco mais de dois dos segmentos em grande expansão, mesmo em época de crise. </p>
-
-                    <p class="lead">Evento Gratuito e com Emissão de Certificado de Horas. #ajems #workchoppajems #empreendedorismo #jovensempreendedores</p>
-
-                    <p class="lead"><a href="#" class="btn btn-lg btn-primary disabled">Inscreva-se</a></p>
-                </div>
-                <div class="col-md-5">                    
-                    <!--data-src="holder.js/400x400/auto"-->
-                    <img id="workchopp-img" width="100%" class="img-thumbnail featurette-image img-responsive center-block" src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/13179204_1033086236757977_4456101136849385387_n.jpg?oh=7cede92111c7b2bf919d78602714e7c3&oe=57E6650D" srcalt="Generic placeholder image">
                 </div>
             </div>
-        </section>
+
+        </section>  <!-- /INFOS -->   
 
 
         <section class="container">
@@ -198,7 +201,14 @@
                     </div>
                 </div>
             </div>
-        </section>  
+        </section> 
+
+        <section>
+            <h3 class="h1" style="text-align:center">Localização</h3>
+            <hr/>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3738.180679114289!2d-54.58467538532971!3d-20.45777096021955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e8c1fbc3cd79%3A0x843af4f256a18cec!2sAv.+Afonso+Pena%2C+5723+-+Ch%C3%A1cara+Cachoeira%2C+Campo+Grande+-+MS%2C+79021-435!5e0!3m2!1spt-BR!2sbr!4v1464199265554"
+                    width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </section> 
 
 
         <section id="associados" class="container">
@@ -240,14 +250,8 @@
             </center>
 
         </section>
-
-
-        <section>
-            <h3 class="h1" style="text-align:center">Localização</h3>
-            <hr/>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3738.180679114289!2d-54.58467538532971!3d-20.45777096021955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e8c1fbc3cd79%3A0x843af4f256a18cec!2sAv.+Afonso+Pena%2C+5723+-+Ch%C3%A1cara+Cachoeira%2C+Campo+Grande+-+MS%2C+79021-435!5e0!3m2!1spt-BR!2sbr!4v1464199265554"
-                    width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </section>
+        
+        <hr/>
 
         <section id="newsletter">
 

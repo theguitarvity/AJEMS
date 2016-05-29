@@ -22,7 +22,7 @@
  */
 
 
-$pageName = @$_GET['pageName'];
+$page = @$_GET['page'];
 
 $menu = "templates/menu.php";
 

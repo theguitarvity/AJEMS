@@ -1,9 +1,9 @@
 
-    <h2>Site</h2>
+    <h4>Site</h4>
 <ul class="nav nav-sidebar">
-    <li <?php if($pageName=="home"||$pageName==NULL) echo "class=\"active\""; ?>><a href="?pageName=home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Visão Geral<span class="sr-only">(current)</span></a></li>
-    <li <?php if($pageName=="layout") echo "class=\"active\""; ?>><a href="?pageName=layout"><span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;Layout</a></li>
-    <li <?php if($pageName=="settings") echo "class=\"active\""; ?>><a href="?pageName=settings"><span class="glyphicon glyphicon-wrench"></span>&nbsp;&nbsp;Configurações</a></li>
+    <li <?php if($page=="home"||$page==NULL) echo "class=\"active\""; ?>><a href="?page=home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Visão Geral<span class="sr-only">(current)</span></a></li>
+    <li <?php if($page=="layout") echo "class=\"active\""; ?>><a href="?page=layout"><span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;Layout</a></li>
+    <li <?php if($page=="settings") echo "class=\"active\""; ?>><a href="?page=settings"><span class="glyphicon glyphicon-wrench"></span>&nbsp;&nbsp;Configurações</a></li>
 </ul>
 <!--    <h2>Associados</h2>
 <ul class="nav nav-sidebar">
