@@ -2,8 +2,11 @@
 
     <head>
 
+        <meta charset="utf-8">
+
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
         <title>AJE-MS — Associação dos Jovens Empreendedores</title>    
 
@@ -17,6 +20,37 @@
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <!--<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>-->
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+        <script>
+            window.sr = ScrollReveal().reveal('#infos');
+        </script>
+
+<!--        <script type="text/javascript">// <![CDATA[
+             $(document).ready(function () {
+                 function filterPath(string) {
+                     return string.replace(/^\//, '').replace(/(index|default).[a-zA-Z]{3,4}$/, '').replace(/\/$/, '');
+                 }
+                 $('a[href*=#]').each(function () {
+                     if (filterPath(location.pathname) == filterPath(this.pathname) && location.hostname == this.hostname && this.hash.replace(/#/, '')) {
+                         var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) + ']');
+                         var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+                         if ($target) {
+                             var targetOffset = $target.offset().top;
+                             $(this).click(function () {
+                                 $('html, body').animate({scrollTop: targetOffset}, 900);
+                                 return false;
+                             });
+                         }
+                     }
+                 });
+             }); // ]]></script>-->
+
+
+
 
     </head>
 
@@ -47,15 +81,16 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                        
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">sobre</a></li>
-                            <li><a href="#">parceiros</a></li>
-                            <li><a href="#">serviços</a></li>
+                            <li><a href="#infos">sobre</a></li>
+                            <li><a href="#eventos">eventos</a></li>
+                            <li><a href="#localizacao">localização</a></li>
+                            <li><a href="#associados">associados</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container -->
             </nav>
-        </header>
+        </header>    
+
 
         <!-- SLIDE
         ----------------------------------------------------------------------->
@@ -69,7 +104,7 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+                    <img class="first-slide" src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/13179204_1033086236757977_4456101136849385387_n.jpg?oh=7cede92111c7b2bf919d78602714e7c3&oe=57E6650D" alt="First slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Example headline.</h1>
@@ -79,7 +114,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+                    <img class="second-slide" src="https://pixabay.com/static/uploads/photo/2016/05/29/20/44/communion-1423787_960_720.jpg" alt="Second slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Another example headline.</h1>
@@ -110,7 +145,7 @@
         </div>
 
         <!-- /.SLIDE -->
- 
+
 
         <section class="container">
             <div class="row featurette">
@@ -120,7 +155,7 @@
 
                     <p class="lead">Venha conosco conhecer a trajetória destes dois jovens empreendedores, e um pouco mais de dois dos segmentos em grande expansão, mesmo em época de crise. </p>
 
-                    <p class="lead">Evento Gratuito e com Emissão de Certificado de Horas. #ajems #workchoppajems #empreendedorismo #jovensempreendedores</p>
+                    <!--<p class="lead">Evento Gratuito e com Emissão de Certificado de Horas. #ajems #workchoppajems #empreendedorismo #jovensempreendedores</p>-->
 
                     <p class="lead"><a href="#" class="btn btn-lg btn-primary disabled">Inscreva-se</a></p>
                 </div>
@@ -130,41 +165,41 @@
                 </div>
             </div>
         </section>
-        
-        
+
+
         <!-- INFOS
         ----------------------------------------------------------------------->
 
         <section id="infos">
             <div>
                 <div class="container">
-                <div class="col-md-3">
-                    <span class="info-item img-circle glyphicon glyphicon-book"></span>
-                    <h4 class="h3">O que é a AJE-MS?</h4>
-                    <p>É uma entidade classista, sem fins lucrativos, que possui como objetivos o fomento e a difusão da cultura empreendedora e a formação de novas lideranças que visem a representação do jovem empreendedor.</p>
-                </div>
-                <div class="col-md-3">
-                    <span class="info-item img-circle glyphicon glyphicon-map-marker"></span>
-                    <h4 class="h3">Qual o nosso objetivo ?</h4>
-                    <p>Contribuir com a formação de novas lideranças no meio empresarial, através de eventos voltados ao desenvolvimento dos nossos associados, e disseminar a cultura empreendedora ao público em geral. </p>
-                </div>
-                <div class="col-md-3">
-                    <span class="info-item img-circle glyphicon glyphicon-bullhorn"></span>
-                    <h4 class="h3">O que fazemos ?</h4>
-                    <p>Realizamos eventos e promovemos missões empresariais e cursos que congregam nossos associados, voltados a contribuir para a sua formação como líderes, além de promovermos ações de cunho social. </p>
-                </div>
-                <div class="col-md-3">
-                    <span class="info-item img-circle fa fa-users" style="font-size: 60px"></span>
-                    <h4 class="h3">Como associar-se ?</h4>
-                    <p>Preencha o formulário e efetue o pagamento da sua taxa de associação. Direcionado aos jovens empreendedores ou intra-empreendedores, empresários ou universitário inspirados pela desejo de transformação e de conexão ao ambiente empreendedor. </p>
-                </div>
+                    <div class="col-md-3">
+                        <span class="info-item img-circle glyphicon glyphicon-book"></span>
+                        <h4 class="h3">O que é a AJE-MS?</h4>
+                        <p>É uma entidade classista, sem fins lucrativos, que possui como objetivos o fomento e a difusão da cultura empreendedora e a formação de novas lideranças que visem a representação do jovem empreendedor.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="info-item img-circle glyphicon glyphicon-map-marker"></span>
+                        <h4 class="h3">Qual o nosso objetivo ?</h4>
+                        <p>Contribuir com a formação de novas lideranças no meio empresarial, através de eventos voltados ao desenvolvimento dos nossos associados, e disseminar a cultura empreendedora ao público em geral. </p>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="info-item img-circle glyphicon glyphicon-bullhorn"></span>
+                        <h4 class="h3">O que fazemos ?</h4>
+                        <p>Realizamos eventos e promovemos missões empresariais e cursos que congregam nossos associados, voltados a contribuir para a sua formação como líderes, além de promovermos ações de cunho social. </p>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="info-item img-circle fa fa-users" style="font-size: 60px"></span>
+                        <h4 class="h3">Como associar-se ?</h4>
+                        <p>Preencha o formulário e efetue o pagamento da sua taxa de associação. Direcionado aos jovens empreendedores ou intra-empreendedores, empresários ou universitário inspirados pela desejo de transformação e de conexão ao ambiente empreendedor. </p>
+                    </div>
                 </div>
             </div>
 
         </section>  <!-- /INFOS -->   
 
 
-        <section class="container">
+        <section id="eventos" class="container">
             <div class="row">
                 <h3 class="h1" style="text-align:center">Eventos</h3>
                 <hr/>
@@ -203,7 +238,7 @@
             </div>
         </section> 
 
-        <section>
+        <section id="localizacao">
             <h3 class="h1" style="text-align:center">Localização</h3>
             <hr/>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3738.180679114289!2d-54.58467538532971!3d-20.45777096021955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e8c1fbc3cd79%3A0x843af4f256a18cec!2sAv.+Afonso+Pena%2C+5723+-+Ch%C3%A1cara+Cachoeira%2C+Campo+Grande+-+MS%2C+79021-435!5e0!3m2!1spt-BR!2sbr!4v1464199265554"
@@ -250,21 +285,26 @@
             </center>
 
         </section>
-        
+
         <hr/>
 
         <section id="newsletter">
+            <div class="container">
+                <h3 class="h1" style="text-align:center">Assine nosso newsletter</h3>
+                <hr />
+                <form class="form-horizontal">
+                    <div class="form-group">
 
-            <h3 class="h1" style="text-align:center">Assine nosso newsletter</h3>
-            <hr />
-            <form class="form-inline">
-                <div class="form-group">
-                    <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                    <input width="100%" type="email" class="form-control" placeholder="Email">
-                </div>
-                <button type="submit" class="btn btn-success">Enviar</button>
-            </form>
+                        <div class="col-md-offset-2 col-sm-6">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        </div>
+                        <div for="inputEmail3" class="col-sm-2">
+                            <button style="width: 100%" type="submit" class="btn btn-success">Enviar</button>
+                        </div>
+                    </div>
+                </form>
 
+            </div>
         </section>
 
 
@@ -336,10 +376,7 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
 
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 
         <script>
             window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
@@ -350,7 +387,7 @@
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="http://getbootstrap.com/assets/js/ie10-viconfiewport-bug-workaround.js"></script>
 
-
+        <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.1.4/scrollreveal.min.js"></script>
     </body>
 
 </html>
