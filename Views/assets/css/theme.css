@@ -32,17 +32,6 @@
 /*  GLOBAL
 ------------------------------------------------------------------------------*/
 
-body {
-    padding: 0;
-    margin: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background: rgba(221, 221, 221, 0.1);
-}
-
-nav {
-    font-family: Oswald;
-}
-
 h3.h1 {
     color: #565454;
 }
@@ -78,15 +67,14 @@ ul.nav.nav-pills.navbar-right li a:hover {
 ------------------------------------------------------------------------------*/
 
 header {
-    background: rgba(153, 153, 153, 0.05);
+    /*background: rgba(153, 153, 153, 0.05);*/
+    background: transparent;
     vertical-align: -webkit-baseline-middle;
 }
 
 header nav {
     text-transform: uppercase;
-    font-size: 16pt;  
-    /*height: 120px;*/
-    /*margin-bottom: -20px;*/
+    font-size: 16pt;
 }
 
 header a.navbar-brand {
@@ -94,23 +82,33 @@ header a.navbar-brand {
     position: relative;
 }
 
-header nav li a:hover {
-    /*color: #555;*/
+#to-top {
+    bottom: 10%;
+    display: none;
+    right: 5%;
+    opacity: 1;
+    position: fixed;
+    background: #236E47;
+    padding: 30px;
+    z-index: 99;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.12);
 }
 
-
-#header .header-menus {
-    height: 50px;
+#to-top a {    
+    color: #f8f8f8;
 }
+
 /*  SLIDE
 ------------------------------------------------------------------------------*/
 
 .carousel {
     height: 500px;
+    /*margin-top: -165px;*/
 }
 
 .carousel-caption {
-    z-index: 10;
+    /*z-index: 10;*/
 }
 
 .carousel .item {
