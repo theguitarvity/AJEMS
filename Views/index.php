@@ -29,12 +29,12 @@
             window.sr = ScrollReveal().reveal('#infos');
         </script>
 
-<!--        <script type="text/javascript">// <![CDATA[
+        <script type="text/javascript">// <![CDATA[
              $(document).ready(function () {
                  function filterPath(string) {
                      return string.replace(/^\//, '').replace(/(index|default).[a-zA-Z]{3,4}$/, '').replace(/\/$/, '');
                  }
-                 $('a[href*=#]').each(function () {
+                 $('a.menu-link').each(function () {
                      if (filterPath(location.pathname) == filterPath(this.pathname) && location.hostname == this.hostname && this.hash.replace(/#/, '')) {
                          var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) + ']');
                          var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
@@ -47,7 +47,7 @@
                          }
                      }
                  });
-             }); // ]]></script>-->
+             }); // ]]></script>
 
 
 
@@ -57,8 +57,8 @@
     <body>
         <nav id="nav-top" class="container">
             <ul class="nav nav-pills navbar-right">
-                <li><a href="#">área restrita</a></li>
-                <li id="filia-se"><a href="#">filia-se</a></li>
+<!--                <li><a href="#">área restrita</a></li>
+                <li id="filia-se"><a href="#">filia-se</a></li>-->
                 <li><a href="#"><i class="fa fa-facebook" style="font-size: 1.5em;" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-instagram" style="font-size: 1.5em;" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-linkedin-square" style="font-size: 1.5em;" aria-hidden="true"></i></a></li>
@@ -81,10 +81,10 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                        
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#infos">sobre</a></li>
-                            <li><a href="#eventos">eventos</a></li>
-                            <li><a href="#localizacao">localização</a></li>
-                            <li><a href="#associados">associados</a></li>
+                            <li><a class="menu-link" href="#infos">sobre</a></li>
+                            <li><a class="menu-link" href="#eventos">eventos</a></li>
+                            <li><a class="menu-link" href="#localizacao">localização</a></li>
+                            <li><a class="menu-link" href="#associados">associados</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container -->

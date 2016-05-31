@@ -4,6 +4,6 @@
   # Página de contato
   # RewriteRule ^contato/?$ /contato.php [NC,L]
   # Página de exibição de um produto
-  # RewriteRule ^([a-z])/?$ /index.php?pageName=$1 [NC]
+  # RewriteRule ^([a-z])/?$ AJEMS/views/admin/index.php?page=$1 [NC]
 
 </IfModule>
