@@ -1,13 +1,15 @@
 <?php
 session_start();
-require_once("classes/Persistencia/DAO/UsuarioDAO.php");
+require_once("./classes/Persistencia/DAO/UsuarioDAO.php");
 $dao = new UsuarioDAO();
-if ($_SESSION['logado'] == 1) {
-    ?>
-    <script type="text/javascript">
-        document.location.href = "dashboard.php";
-    </script>
-    <?php
+if (isset($_SESSION['logado'])) {
+    if ($_SESSION['logado'] == 1) {
+        ?>
+        <script type="text/javascript">
+            document.location.href = "dashboard.php";
+        </script>
+        <?php
+    }
 }
 ?>
 
@@ -61,7 +63,7 @@ and open the template in the editor.
                         <input type="checkbox" value="remember-me"> Remember me
                     </label>
                 </div>
-                <button name ="btn_log"class="btn btn-lg btn-primary btn-block" type="submit" style="width: 10%">Sign in</button>
+                <button name ="btn_log"class="btn btn-lg btn-primary btn-block" type="submit" style="width: 10%">Entrar</button>
             </form>
 
         </div>
@@ -74,7 +76,7 @@ if (isset($_POST['btn_log'])) {
         $_SESSION['userID'] = $dao->retornaID($_POST['email']);
         ?>
         <script>
-        document.location.href = "dashboard.php?page=home";
+            document.location.href = "dashboard.php?page=home";
         </script>
         <?php
     } else {
