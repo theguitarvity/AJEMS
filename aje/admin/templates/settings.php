@@ -1,0 +1,1 @@
+<p>Página de settings não disponível.</p>
