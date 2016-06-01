@@ -1,13 +1,12 @@
 <?php
 session_start();
 
-if ($_SESSION['logado']!= 1) {
+if ($_SESSION['logado'] != 1) {
     ?>
     <script type="text/javascript">
         document.location.href = "login.php";
     </script>
     <?php
-    
 }
 ?>
 
@@ -43,7 +42,35 @@ $menu = "templates/menu.php";
 $home_page = "templates/home.php";
 $layout_page = "templates/layout.php";
 $settings_page = "templates/settings.php";
+$cadastros_page = "templates/cadastros.php";
 ?>
+    
+<?php
+require_once ("classes/Persistencia/DAO/ConnectionFactory.php");
+require_once("classes/Persistencia/DAO/UsuarioDAO.php");
+
+$dao = new UsuarioDAO();
+$conn = new ConnectionFactory();
+$pdo = $conn->Connect();
+if(isset($_SESSION['userID'])){
+    try{
+        $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id_usuario  = :id");
+        $param = array(
+            ":id"=>$_SESSION['userID']
+        );
+        $stmt->execute($param);
+        $linha = $stmt->fetch(PDO::FETCH_ASSOC);
+        $nome = $linha['nome'];
+        
+            
+        
+        
+    } catch (PDOException $ex) {
+        echo $ex->getMessage();
+    }
+}
+?>    
+    
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -68,8 +95,8 @@ $settings_page = "templates/settings.php";
 
         <!-- Custom styles for this template -->
         <link href="dashboard.css" rel="stylesheet">
-        
-        
+
+
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
@@ -101,9 +128,8 @@ $settings_page = "templates/settings.php";
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <!--                        <li><a href="#">Dashboard</a></li>
-                                                <li><a href="#">Settings</a></li>
-                                                <li><a href="#">Profile</a></li>-->
+                        <li><a href="#"><?php echo "Olá, ". $nome;?></a></li>
+                        
                         <li><a href="?acao=sair">Sair</a></li>
                     </ul>
                     <!--                    <form class="navbar-form navbar-right">;
@@ -131,6 +157,9 @@ $settings_page = "templates/settings.php";
                             break;
                         case "settings":
                             require $settings_page;
+                            break;
+                        case "cadastros":
+                            require $cadastros_page;
                             break;
                         default :
                             echo '<h2>Página não encontrada</h2>';

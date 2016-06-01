@@ -53,15 +53,15 @@ and open the template in the editor.
             <form class="form-signin" method="post">
                 <h2 class="form-signin-heading">Please sign in</h2>
                 <label for="inputEmail" class="sr-only">Email address</label>
-                <input name="email"type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <input class="form-control" style="width: 30%;" name="email"type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                 <label for="inputPassword" class="sr-only">Password</label>
-                <input name="senha"type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input style="width: 30%;" name="senha"type="password" id="inputPassword" class="form-control" placeholder="Password" required>
                 <div class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me"> Remember me
                     </label>
                 </div>
-                <button name ="btn_log"class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <button name ="btn_log"class="btn btn-lg btn-primary btn-block" type="submit" style="width: 10%">Sign in</button>
             </form>
 
         </div>
@@ -71,10 +71,10 @@ and open the template in the editor.
 if (isset($_POST['btn_log'])) {
     if ($dao->login($_POST['email'], $_POST['senha'])) {
         $_SESSION['logado'] = 1;
-        $_SESSION['userid'] = $dao->retornaID($_POST['email']);
+        $_SESSION['userID'] = $dao->retornaID($_POST['email']);
         ?>
         <script>
-        document.location.href = "dashboard.php";
+        document.location.href = "dashboard.php?page=home";
         </script>
         <?php
     } else {

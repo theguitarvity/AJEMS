@@ -16,7 +16,7 @@
         <tbody>
             <!-- abaixo se encontra a listagem dos transformandos ja cadatrados -->
             <?php
-            $i=1;
+            $i = 1;
             while (isset($_POST['btn_add'])) {
                 ?>
 
@@ -24,14 +24,16 @@
                     <td><?php echo $i; ?></td>
                     <td>Example headline.</td>
                     <td></td>
-                    <td><input type="file" href="#" class="btn btn-info"></input></td>
-                    <td><a type="file" href="#" class="btn btn-info"><span class="glyphicon glyphicon-edit" /></a></td>
-                    <td><a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-trash" /></a></td>
-                </tr> 
-                <?php
-                break;
-            }
-            ?>
+            <label class="control-label">Select File</label>
+            <td><input id="input-1" type="file" class="file"></td>
+            <td><a type="file" href="#" class="btn btn-info"><span class="glyphicon glyphicon-edit" /></a></td>
+            <td><a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-trash" /></a></td>
+            <td><input type="submit" class="btn btn-success"  value="cadastrar"name = "btn_cad"></td>
+            </tr> 
+            <?php
+            break;
+        }
+        ?>
 
         </tbody>
     </table>
@@ -39,12 +41,33 @@
 <form method="post">
     <p>
         <button class="btn btn-success"  name = "btn_add" onclick="inserirSlide()">Inserir SLide</button>
+        <label class="control-label">Planets and Satellites</label>
+        <input id="input-24" name="input24[]" type="file" multiple class="file-loading">
+        <script>
+            $(document).on('ready', function () {
+                $("#input-24").fileinput({
+                    initialPreview: [
+                        'http://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/631px-FullMoon2010.jpg',
+                        'http://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Earth_Eastern_Hemisphere.jpg/600px-Earth_Eastern_Hemisphere.jpg'
+                    ],
+                    initialPreviewAsData: true,
+                    initialPreviewConfig: [
+                        {caption: "Moon.jpg", size: 930321, width: "120px", key: 1},
+                        {caption: "Earth.jpg", size: 1218822, width: "120px", key: 2}
+                    ],
+                    deleteUrl: "/site/file-delete",
+                    overwriteInitial: false,
+                    maxFileSize: 100,
+                    initialCaption: "The Moon and the Earth"
+                });
+            });
+        </script>
     </p>
 </form>
 
 <script>
     function inserirSlide() {
-        document.getElementById("inserirSlide").innerHTML = "O FILHA DA PUTA";
+        document.getElementById("inserirSlide").innerHTML = "TESTE Executado";
     }
 </script>
 
