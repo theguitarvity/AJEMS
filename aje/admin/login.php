@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("./classes/Persistencia/DAO/UsuarioDAO.php");
+require_once("classes/Persistencia/DAO/UsuarioDAO.php");
 $dao = new UsuarioDAO();
 if ($_SESSION['logado'] == 1) {
     ?>
