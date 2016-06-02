@@ -1,5 +1,5 @@
 <?php
-@session_start();
+session_start();
 
 if ($_SESSION['logado'] != 1) {
     ?>
@@ -9,6 +9,7 @@ if ($_SESSION['logado'] != 1) {
     <?php
 }
 ?>
+
 
 
 <?php
@@ -37,18 +38,14 @@ if ($_SESSION['logado'] != 1) {
 
 $page = @$_GET['page'];
 
-if ($page==null) {
-    @$page = home;
-}
+$menu = "menu.php";
 
-$menu = "templates/menu.php";
-
-$home_page = "templates/home.php";
+$home_page = "home.php";
 $layout_page = "templates/layout.php";
-$settings_page = "templates/settings.php";
+$settings_page = "settings.php";
 $cadastros_page = "templates/cadastros.php";
 ?>
-    
+
 <?php
 require_once ("classes/Persistencia/DAO/ConnectionFactory.php");
 require_once("classes/Persistencia/DAO/UsuarioDAO.php");
@@ -56,25 +53,21 @@ require_once("classes/Persistencia/DAO/UsuarioDAO.php");
 $dao = new UsuarioDAO();
 $conn = new ConnectionFactory();
 $pdo = $conn->Connect();
-if(isset($_SESSION['userID'])){
-    try{
+if (isset($_SESSION['userID'])) {
+    try {
         $stmt = $pdo->prepare("SELECT * FROM usuario WHERE id_usuario  = :id");
         $param = array(
-            ":id"=>$_SESSION['userID']
+            ":id" => $_SESSION['userID']
         );
         $stmt->execute($param);
         $linha = $stmt->fetch(PDO::FETCH_ASSOC);
         $nome = $linha['nome'];
-        
-            
-        
-        
     } catch (PDOException $ex) {
         echo $ex->getMessage();
     }
 }
 ?>    
-    
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -132,8 +125,8 @@ if(isset($_SESSION['userID'])){
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><?php echo "Olá, ". $nome;?></a></li>
-                        
+                        <li><a href="#"><?php echo "Olá, " . $nome; ?></a></li>
+
                         <li><a href="?acao=sair">Sair</a></li>
                     </ul>
                     <!--                    <form class="navbar-form navbar-right">;
@@ -146,30 +139,30 @@ if(isset($_SESSION['userID'])){
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
-                    <?php require $menu; ?>
+<?php require $menu; ?>
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 
-                    <?php
-                    switch ($page) {
-                        case "home" :
-                            require $home_page;
-                            break;
-                        case "layout":
-                            require $layout_page;
-                            break;
-                        case "settings":
-                            require $settings_page;
-                            break;
-                        case "cadastros":
-                            require $cadastros_page;
-                            break;
-                        default :
-                            echo '<h2>Página não encontrada</h2>';
-                            break;
-                    }
-                    ?>
+<?php
+switch ($page) {
+    case "home" :
+        require $home_page;
+        break;
+    case "layout":
+        require $layout_page;
+        break;
+    case "settings":
+        require $settings_page;
+        break;
+    case "cadastros":
+        require $cadastros_page;
+        break;
+    default :
+        echo '<h2>Página não encontrada</h2>';
+        break;
+}
+?>
                 </div>
             </div>
         </div>

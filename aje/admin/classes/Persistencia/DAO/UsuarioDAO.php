@@ -15,75 +15,73 @@ class UsuarioDAO {
     }
 
     //iniciando definição do CRUD
-    function insert(Usuario $user) {
+    function inserir(Usuario $user) {
         try {
-            $stmt = $this->pdo->prepare("INSERT INTO usuario(cpf,nome, empresa, dt_nasc, grupo_acesso, tel_cel, tel_fixo, email, end_usuario) VALUES(:cpf,:nome, :empresa,:dtNasc,:grupoAcesso, :tel, :cel, :email,:end)");
+            $stmt = $this->pdo->prepare("INSERT INTO usuario(cpf,nome, empresa, dt_nasc,grupo_acesso,tel_cel, tel_fixo, email, end_usuario, senha) VALUES(:cpf,:nome, :empresa,:dtNasc,:grupo,:tel, :cel, :email,:end,:senha)");
             $param = array(
                 ":cpf" => $user->getCpfUsuario(),
                 ":nome" => $user->getNomeUsuario(),
                 ":empresa" => $user->getEmpresaUsuario(),
-                ":dt" => $user->getDataNasc(),
-                ":grupoAcesso" => $user->getIdGrupo(),
+                ":dtNasc" => $user->getDataNasc(),
+                ":grupo" => $user->getIdGrupo(),
                 ":tel" => $user->getTelFixo(),
                 ":cel" => $user->getTelCel(),
                 ":email" => $user->getEmailUsuario(),
-                ":end" => $user->getIdEndereco()
+                ":end" => $user->getIdEndereco(),
+                ":senha" => $user->getSenha()
             );
-            return $stmt($param);
+            return $stmt->execute($param);
         } catch (PDOException $ex) {
-            echo $ex->getMessage();
+            echo $ex->getMessage() . "<br  />";
+            echo $ex->getLine() . "<br  />";
+            echo $ex->getFile() . "<br  />";
+            echo $ex->getCode();
         }
     }
-    function delete(Usuario $user){
-        try{
+
+    function delete(Usuario $user) {
+        try {
             $stmt = $this->pdo->prepare("DELETE FROM usuario WHERE id_usuario=:id");
             $param = array(
-                ":id"=>$user->getIdUsuario()
+                ":id" => $user->getIdUsuario()
             );
             return $stmt->execute($param);
         } catch (PDOException $ex) {
             echo $ex->getMessage();
         }
     }
-    
-    function login($email,$senha){
+
+    function login($email, $senha) {
         try {
-            $stmt=$this->pdo->prepare("SELECT * FROM usuario WHERE email = :email AND senha=:senha ");
+            $stmt = $this->pdo->prepare("SELECT * FROM usuario WHERE email = :email AND senha=:senha ");
             $param = array(
-                ":email"=>$email,
-                ":senha"=>$senha
+                ":email" => $email,
+                ":senha" => $senha
             );
             $stmt->execute($param);
-            if($stmt->rowCount()>0){
+            if ($stmt->rowCount() > 0) {
                 return true;
-            }
-            else{
+            } else {
                 return false;
             }
-            
         } catch (PDOException $ex) {
             echo $ex->getMessage();
-            
         }
     }
-    function retornaID($email){
+
+    function retornaID($email) {
         try {
             $stmt = $this->pdo->prepare("SELECT * FROM usuario WHERE email = :email");
             $param = array(
-                ":email"=>$email
+                ":email" => $email
             );
             $stmt->execute($param);
-            if($stmt->rowCount()>0){
+            if ($stmt->rowCount() > 0) {
                 $cons = $stmt->fetch(PDO::FETCH_ASSOC);
                 return $cons['id_usuario'];
-                
-            }
-            else{
+            } else {
                 return "";
             }
-            
-            
-            
         } catch (PDOException $ex) {
             echo $ex->getMessage();
         }

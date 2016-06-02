@@ -22,17 +22,13 @@
  */
 
 
-// $page = @$_GET['page'];
+$page = @$_GET['page'];
 
-// if ($page==null) {
-//     $page = home;
-// }
+$menu = "templates/menu.php";
 
-// $menu = "templates/menu.php";
-
-// $home_page = "templates/home.php";
-// $layout_page = "templates/layout.php";
-// $settings_page = "templates/settings.php";
+$home_page = "templates/home.php";
+$layout_page = "templates/layout.php";
+$settings_page = "templates/settings.php";
 ?>
 
 <!DOCTYPE html>
@@ -74,20 +70,18 @@
     <body>
 
 <?php
+/* ATENÇÃOOOOOO
+ * 
+ * 
+ */
 
+$logado = false;
 session_start();
 
-if ($_SESSION['logado']==1){
-    require 'dashboard.php';
-}
-else{
-?>
-
-        <script>
-            document.location.href = "login.php";
-        </script>
-<?php
-}
+if ($_SESSION['logado']==1)
+    require 't_home.php';
+else
+    require 't_login.php';
 ?>
 
         <!-- Bootstrap core JavaScript

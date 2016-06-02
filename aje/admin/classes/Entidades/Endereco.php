@@ -15,7 +15,17 @@ class Endereco {
     private $estadoEndereco;
     private $cepEndereco;
     private $complemento;
+    private $cpfUser;
     
+    function getCpfUser() {
+        return $this->cpfUser;
+    }
+
+    function setCpfUser($cpfUser) {
+        $this->cpfUser = $cpfUser;
+    }
+
+        
     function getComplemento() {
         return $this->complemento;
     }

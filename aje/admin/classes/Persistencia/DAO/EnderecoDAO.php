@@ -5,7 +5,7 @@
  *
  * @copyright (c) 2015, ByteGod IT solutions - todos os direitos reservados
  */
-    require_once("../ConnectionFactory.php");
+    require_once("ConnectionFactory.php");
 class EnderecoDAO {
     function __construct() {
         $this->conn = new ConnectionFactory();
@@ -14,7 +14,7 @@ class EnderecoDAO {
     }
     function inserir(Endereco $end){
         try {
-            $stmt = $this->pdo->prepare("INSERT INTO endereco(rua, numero, complemento, bairro, cep, cidade, estado) VALUES(:rua,:numero,:complemento,:bairro,:cep, :cidade,:estado)");
+            $stmt = $this->pdo->prepare("INSERT INTO endereco(rua, numero, complemento, bairro, cep, cidade, estado, cpf_usuario) VALUES(:rua,:numero,:complemento,:bairro,:cep, :cidade,:estado, :cpf)");
             $param=array(
                 ":rua" =>$end->getRuaEndereco(),
                 ":numero"=>$end->getNumeroEndereco(),
@@ -22,7 +22,8 @@ class EnderecoDAO {
                 ":bairro"=>$end->getBairroEndereco(),
                 ":cep"=>$end->getCepEndereco(),
                 ":cidade"=>$end->getCidadeEndereco(),
-                ":estado"=>$end->getEstadoEndereco()
+                ":estado"=>$end->getEstadoEndereco(),
+                ":cpf"=>$end->getCpfUser()
             );
             return $stmt->execute($param);
             
@@ -63,6 +64,27 @@ class EnderecoDAO {
         } 
         catch (PDOException $ex) {
             echo $ex->getMessage();
+        }
+    }
+    
+    function retorID($cpf){
+        try {
+            $stmt = $this->pdo->prepare("SELECT * FROM endereco WHERE cpf_usuario=:cpf");
+            $param = array(
+                ":cpf"=>$cpf
+            );
+            $stmt->execute($param);
+            if($stmt->rowCount()>0){
+                $linha = $stmt->fetch(PDO::FETCH_ASSOC);
+                return $linha['id_endereco'];
+            }
+            else{
+            
+                return "";
+            }
+            
+        } catch (PDOException $ex) {
+            $ex->getMessage();
         }
     }
 }

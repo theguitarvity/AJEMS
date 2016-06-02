@@ -16,8 +16,17 @@ class Usuario {
     private $telFixo;
     private $telCel;
     private $empresaUsuario;
-    private $acesseGrupo;
+    private $senha;
     
+    function getSenha() {
+        return $this->senha;
+    }
+
+    function setSenha($senha) {
+        $this->senha = $senha;
+    }
+
+        
     
     function getIdUsuario() {
         return $this->idUsuario;
@@ -59,9 +68,7 @@ class Usuario {
         return $this->empresaUsuario;
     }
 
-    function getAcesseGrupo() {
-        return $this->acesseGrupo;
-    }
+    
 
     function setIdUsuario($idUsuario) {
         $this->idUsuario = $idUsuario;
@@ -103,9 +110,6 @@ class Usuario {
         $this->empresaUsuario = $empresaUsuario;
     }
 
-    function setAcesseGrupo($acesseGrupo) {
-        $this->acesseGrupo = $acesseGrupo;
-    }
 
 
 }
