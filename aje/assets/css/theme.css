@@ -88,10 +88,11 @@ header a.navbar-brand {
     right: 5%;
     opacity: 1;
     position: fixed;
-    background: #236E47;
-    padding: 30px;
+    /*background: #236E47;*/
+    background: #FDB932;
+    padding: 20px;
     z-index: 99;
-    border-radius: 50%;
+    border-radius: 10px;
     border: 2px solid rgba(0, 0, 0, 0.12);
 }
 

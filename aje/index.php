@@ -25,10 +25,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 
-        <script>
-            window.sr = ScrollReveal().reveal('#infos');
-        </script>
-
         <script type="text/javascript">// <![CDATA[
             $(document).ready(function () {
                 function filterPath(string) {
@@ -344,7 +340,7 @@
 
         <script>
             // Primeiro ano da AJE-MS
-            var s_year = 2016;
+            var s_year = 2011;
             // Ano atual        
             var a_year = new Date().getYear() + 1900;
 
