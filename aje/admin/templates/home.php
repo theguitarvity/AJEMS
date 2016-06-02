@@ -9,7 +9,7 @@
                 <div class="caption">
                     <h3>Cadastrar Usuários</h3>
                     <p>Aqui você poderá cadastrar os usuários para terem acesso administrativo no site</p>
-                    <p><a href="?page=cadastros" class="btn btn-success btn-lg btn-block" role="button">Ir para tela de cadastro</a></p>
+                    <p><a href="?page=users" class="btn btn-success btn-lg btn-block" role="button">Ir para tela de cadastro</a></p>
                 </div>
             </div>
         </div>

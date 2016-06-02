@@ -86,6 +86,13 @@ if (isset($_POST['btn_cad']) && $_POST['senha'] == $_POST['conf']) {
             </script>
             <?php
         }
+        else{
+            ?>
+            <script>
+                alert("usuario não cadastrado");
+            </script>
+            <?php
+        }
     }
 }
 ?>
