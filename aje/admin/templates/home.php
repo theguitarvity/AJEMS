@@ -1,153 +1,66 @@
-<h1 class="page-header">Dashboard</h1>
 
-<div class="row placeholders">
-    <div class="col-xs-6 col-sm-3 placeholder">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-        <h4>Label</h4>
-        <span class="text-muted">Something else</span>
+<section class="container-fluid">
+    <div class="row">
+        <h3 class="page-header" style="text-align:center">Ações diponíveis para o seu perfil</h3>
+        
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <i class="glyphicon glyphicon-plus"></i>
+                <div class="caption">
+                    <h3>Cadastrar Usuários</h3>
+                    <p>Aqui você poderá cadastrar os usuários para terem acesso administrativo no site</p>
+                    <p><a href="?page=cadastros" class="btn btn-success btn-lg btn-block" role="button">Ir para tela de cadastro</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <i class="info-item img-circle glyphicon glyphicon-plus"></i>
+                <div class="caption">
+                    <h3>Gerenciar conteúdo do site</h3>
+                    <p>Aqui você poderá gerênciar o conteúdo a ser exibido no site, desde slides, sessões e afins.</p>
+                    <p><a href="?page=layout" class="btn btn-success btn-lg btn-block" role="button">Ir para tela de gerenciamento</a></p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-xs-6 col-sm-3 placeholder">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-        <h4>Label</h4>
-        <span class="text-muted">Something else</span>
-    </div>
-    <div class="col-xs-6 col-sm-3 placeholder">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-        <h4>Label</h4>
-        <span class="text-muted">Something else</span>
-    </div>
-    <div class="col-xs-6 col-sm-3 placeholder">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-        <h4>Label</h4>
-        <span class="text-muted">Something else</span>
-    </div>
-</div>
+</section>
 
-<h2 class="sub-header">Section title</h2>
+<h2 class="sub-header">Lista de Usuários Cadastrados</h2>
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>#</th>
-                <th>Header</th>
-                <th>Header</th>
-                <th>Header</th>
-                <th>Header</th>
+                <th>id</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Empresa</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>1,001</td>
-                <td>Lorem</td>
-                <td>ipsum</td>
-                <td>dolor</td>
-                <td>sit</td>
+
+                <?php
+                $query = $pdo->query("SELECT id_usuario,nome,email,empresa FROM usuario");
+                while ($linha = $query->fetch(PDO::FETCH_ASSOC)) {
+                    ?>
+                <tr>
+                    <td><?php echo $linha['id_usuario']; ?></td>
+                    <td><?php echo $linha['nome']; ?></td>
+                    <td><?php echo $linha['email']; ?></td>
+                    <td><?php echo $linha['empresa']; ?></td>
+                  
+                </tr>    
+                <?php
+            }
+            ?> 
             </tr>
-            <tr>
-                <td>1,002</td>
-                <td>amet</td>
-                <td>consectetur</td>
-                <td>adipiscing</td>
-                <td>elit</td>
-            </tr>
-            <tr>
-                <td>1,003</td>
-                <td>Integer</td>
-                <td>nec</td>
-                <td>odio</td>
-                <td>Praesent</td>
-            </tr>
-            <tr>
-                <td>1,003</td>
-                <td>libero</td>
-                <td>Sed</td>
-                <td>cursus</td>
-                <td>ante</td>
-            </tr>
-            <tr>
-                <td>1,004</td>
-                <td>dapibus</td>
-                <td>diam</td>
-                <td>Sed</td>
-                <td>nisi</td>
-            </tr>
-            <tr>
-                <td>1,005</td>
-                <td>Nulla</td>
-                <td>quis</td>
-                <td>sem</td>
-                <td>at</td>
-            </tr>
-            <tr>
-                <td>1,006</td>
-                <td>nibh</td>
-                <td>elementum</td>
-                <td>imperdiet</td>
-                <td>Duis</td>
-            </tr>
-            <tr>
-                <td>1,007</td>
-                <td>sagittis</td>
-                <td>ipsum</td>
-                <td>Praesent</td>
-                <td>mauris</td>
-            </tr>
-            <tr>
-                <td>1,008</td>
-                <td>Fusce</td>
-                <td>nec</td>
-                <td>tellus</td>
-                <td>sed</td>
-            </tr>
-            <tr>
-                <td>1,009</td>
-                <td>augue</td>
-                <td>semper</td>
-                <td>porta</td>
-                <td>Mauris</td>
-            </tr>
-            <tr>
-                <td>1,010</td>
-                <td>massa</td>
-                <td>Vestibulum</td>
-                <td>lacinia</td>
-                <td>arcu</td>
-            </tr>
-            <tr>
-                <td>1,011</td>
-                <td>eget</td>
-                <td>nulla</td>
-                <td>Class</td>
-                <td>aptent</td>
-            </tr>
-            <tr>
-                <td>1,012</td>
-                <td>taciti</td>
-                <td>sociosqu</td>
-                <td>ad</td>
-                <td>litora</td>
-            </tr>
-            <tr>
-                <td>1,013</td>
-                <td>torquent</td>
-                <td>per</td>
-                <td>conubia</td>
-                <td>nostra</td>
-            </tr>
-            <tr>
-                <td>1,014</td>
-                <td>per</td>
-                <td>inceptos</td>
-                <td>himenaeos</td>
-                <td>Curabitur</td>
-            </tr>
-            <tr>
-                <td>1,015</td>
-                <td>sodales</td>
-                <td>ligula</td>
-                <td>in</td>
-                <td>libero</td>
-            </tr>
+
         </tbody>
     </table>
 </div>
+
+<!--
+   <?php //echo "Seja Bem-Vindo, " . $pri = explode(" ", $nome)[0]; ?>
+
+->

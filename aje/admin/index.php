@@ -69,19 +69,28 @@ $settings_page = "templates/settings.php";
 
     <body>
 
-<?php
-/* ATENÇÃOOOOOO
- * 
- * 
- */
+        <?php
+        /* ATENÇÃOOOOOO
+         * 
+         * 
+         */
 
-$logado = false;
-session_start();
+        $logado = false;
+        session_start();
 
-if ($_SESSION['logado']==1)
-    require 't_home.php';
-else
-    require 't_login.php';
+        if ($_SESSION['logado'] == 1) {
+            ?>
+            <script>
+                document.location.href = "dashboard.php?page=home";
+            </script>
+            <?php
+        } else {
+            ?>
+            <script>
+                document.location.href = "dashboard.php?page=home";
+            </script>
+    <?php
+}
 ?>
 
         <!-- Bootstrap core JavaScript
