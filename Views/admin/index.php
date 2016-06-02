@@ -75,10 +75,10 @@ $settings_page = "templates/settings.php";
  * 
  */
 
-$logado = true;
+$logado = false;
+session_start();
 
-
-if ($logado)
+if ($_SESSION['logado']==1)
     require 't_home.php';
 else
     require 't_login.php';
