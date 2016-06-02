@@ -1,77 +1,32 @@
 <h3>Slide</h3>
 
-<div id="editSlide"></div>
+<!-- <div id="editSlide"></div> -->
 
-<form method="post" action="upload.php">
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Titulo</th>
-                <th>Descriçao</th>
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- abaixo se encontra a listagem dos transformandos ja cadatrados -->
-            <?php
-            $i = 1;
-            while (isset($_POST['btn_add'])) {
-                ?>
 
-                <tr id="slide_1">
-                    <td><?php echo $i; ?></td>
-                    <td>Example headline.</td>
-                    <td></td>
-            <label class="control-label">Select File</label>
-            <td><input id="input-1" type="file" class="file"></td>
-            <td><a type="file" href="#" class="btn btn-info"><span class="glyphicon glyphicon-edit" /></a></td>
-            <td><a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-trash" /></a></td>
-            <td><input type="submit" class="btn btn-success"  value="cadastrar"name = "btn_cad"></td>
-            </tr> 
-            <?php
-            break;
-        }
-        ?>
+<form id="inserirSlide"></form>
 
-        </tbody>
-    </table>
-</form>
-<form method="post">
-    <p>
-        <button class="btn btn-success"  name = "btn_add" onclick="inserirSlide()">Inserir SLide</button>
-        <label class="control-label">Planets and Satellites</label>
-        <input id="input-24" name="input24[]" type="file" multiple class="file-loading">
-        <script>
-            $(document).on('ready', function () {
-                $("#input-24").fileinput({
-                    initialPreview: [
-                        'http://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/631px-FullMoon2010.jpg',
-                        'http://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Earth_Eastern_Hemisphere.jpg/600px-Earth_Eastern_Hemisphere.jpg'
-                    ],
-                    initialPreviewAsData: true,
-                    initialPreviewConfig: [
-                        {caption: "Moon.jpg", size: 930321, width: "120px", key: 1},
-                        {caption: "Earth.jpg", size: 1218822, width: "120px", key: 2}
-                    ],
-                    deleteUrl: "/site/file-delete",
-                    overwriteInitial: false,
-                    maxFileSize: 100,
-                    initialCaption: "The Moon and the Earth"
-                });
-            });
-        </script>
-    </p>
-</form>
+<button class="btn btn-success" id="btn_inserirSlide" name="btn_add" onclick="inserirSlide()">Inserir Slide</button>
+
 
 <script>
     function inserirSlide() {
-        document.getElementById("inserirSlide").innerHTML = "TESTE Executado";
+
+        var _html = "<h4>Inserir Slide</h4>";
+
+        _html += "<input type=\"file\" name=\"titulo\" placeholder=\"Título do Slide\" class=\"file-loading\"><br />";
+        _html += "<input type=\"text\" name=\"titulo\" placeholder=\"Título do Slide\" class=\"form-control\"><br />";
+        _html += "<input type=\"text\" name=\"descricao\" placeholder=\"descricao\" class=\"form-control\"><br />";
+        _html += "<input type=\"text\" name=\"link_name\" placeholder=\"Nome do link\" class=\"form-control\"><br />";
+        _html += "<input type=\"text\" name=\"link_url\" placeholder=\"Endereço do link\" class=\"form-control\"><br />";
+
+        _html += "<button class=\"btn btn-info\" name=\"inserir\">Enviar</button>"
+        _html += "&nbsp;&nbsp;&nbsp;<a class=\"btn btn-warning\" href=\"?page=layout\">Cancelar</a>"
+
+        document.getElementById("inserirSlide").innerHTML = _html;
+
+        document.getElementById("btn_inserirSlide").style.display = "none";
     }
 </script>
-
-<form id="inserirSlide"></form>
 
 <h3>Sobre</h3>
 

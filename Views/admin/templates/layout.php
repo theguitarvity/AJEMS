@@ -67,7 +67,7 @@
 
 <script>
     function inserirSlide() {
-        document.getElementById("inserirSlide").innerHTML = "TESTE Executado";
+        document.getElementById("inserirSlide").innerHTML += "TESTE Executado";
     }
 </script>
 
