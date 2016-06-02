@@ -38,11 +38,11 @@ if ($_SESSION['logado'] != 1) {
 
 $page = @$_GET['page'];
 
-$menu = "menu.php";
+$menu = "templates/menu.php";
 
-$home_page = "home.php";
+$home_page = "templates/home.php";
 $layout_page = "templates/layout.php";
-$settings_page = "settings.php";
+$settings_page = "templates/settings.php";
 $cadastros_page = "templates/cadastros.php";
 ?>
 
