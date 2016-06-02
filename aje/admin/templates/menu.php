@@ -3,7 +3,7 @@
 <ul class="nav nav-sidebar">
     <li <?php if($page=="home"||$page==NULL) echo "class=\"active\""; ?>><a href="?page=home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Visão Geral<span class="sr-only">(current)</span></a></li>
     <li <?php if($page=="layout") echo "class=\"active\""; ?>><a href="?page=layout"><span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;Layout</a></li>
-    <li <?php if($page=="cadastros") echo "class=\"active\""; ?>><a href="?page=cadastros"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Cadastros</a></li>
+    <li <?php if($page=="users") echo "class=\"active\""; ?>><a href="?page=users"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;Usuários</a></li>
     <li <?php if($page=="settings") echo "class=\"active\""; ?>><a href="?page=settings"><span class="glyphicon glyphicon-wrench"></span>&nbsp;&nbsp;Configurações</a></li>
 </ul>
 <!--    <h2>Associados</h2>

@@ -43,7 +43,7 @@ $menu = "templates/menu.php";
 $home_page = "templates/home.php";
 $layout_page = "templates/layout.php";
 $settings_page = "templates/settings.php";
-$cadastros_page = "templates/cadastros.php";
+$cadastros_page = "templates/users.php";
 ?>
 
 <?php
@@ -78,6 +78,8 @@ if (isset($_SESSION['userID'])) {
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="icon" href="../../favicon.ico">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><!--importanto as fontes e os incones do fonts awesome-->
+		
 
         <title>Área de administração AJE-MS</title>
 
@@ -155,7 +157,7 @@ switch ($page) {
     case "settings":
         require $settings_page;
         break;
-    case "cadastros":
+    case "users":
         require $cadastros_page;
         break;
     default :
