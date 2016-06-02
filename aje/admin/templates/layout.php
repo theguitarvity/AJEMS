@@ -3,7 +3,7 @@
 <!-- <div id="editSlide"></div> -->
 
 
-<form id="inserirSlide"></form>
+<form id="inserirSlide" method="post" action="upload.php"></form>
 
 <button class="btn btn-success" id="btn_inserirSlide" name="btn_add" onclick="inserirSlide()">Inserir Slide</button>
 

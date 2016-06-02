@@ -22,13 +22,17 @@
  */
 
 
-$page = @$_GET['page'];
+// $page = @$_GET['page'];
 
-$menu = "templates/menu.php";
+// if ($page==null) {
+//     $page = home;
+// }
 
-$home_page = "templates/home.php";
-$layout_page = "templates/layout.php";
-$settings_page = "templates/settings.php";
+// $menu = "templates/menu.php";
+
+// $home_page = "templates/home.php";
+// $layout_page = "templates/layout.php";
+// $settings_page = "templates/settings.php";
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +78,7 @@ $settings_page = "templates/settings.php";
 session_start();
 
 if ($_SESSION['logado']==1){
-    require 't_home.php';
+    require 'dashboard.php';
 }
 else{
 ?>

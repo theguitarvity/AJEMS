@@ -1,5 +1,5 @@
 <?php
-session_start();
+@session_start();
 
 if ($_SESSION['logado'] != 1) {
     ?>
@@ -36,6 +36,10 @@ if ($_SESSION['logado'] != 1) {
 
 
 $page = @$_GET['page'];
+
+if ($page==null) {
+    @$page = home;
+}
 
 $menu = "templates/menu.php";
 
