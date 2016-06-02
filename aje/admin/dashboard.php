@@ -125,7 +125,7 @@ if (isset($_SESSION['userID'])) {
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><?php echo "Olá, " . $nome; ?></a></li>
+                        <li><a href="#"><?php echo "Olá, " . explode(" ", $nome)[0]; ?></a></li>
 
                         <li><a href="?acao=sair">Sair</a></li>
                     </ul>
