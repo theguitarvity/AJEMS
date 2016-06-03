@@ -26,39 +26,7 @@
     </div>
 </section>
 
-<h2 class="sub-header">Lista de Usuários Cadastrados</h2>
-<div class="table-responsive">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>id</th>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Empresa</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
 
-                <?php
-                $query = $pdo->query("SELECT id_usuario,nome,email,empresa FROM usuario");
-                while ($linha = $query->fetch(PDO::FETCH_ASSOC)) {
-                    ?>
-                <tr>
-                    <td><?php echo $linha['id_usuario']; ?></td>
-                    <td><?php echo $linha['nome']; ?></td>
-                    <td><?php echo $linha['email']; ?></td>
-                    <td><?php echo $linha['empresa']; ?></td>
-                  
-                </tr>    
-                <?php
-            }
-            ?> 
-            </tr>
-
-        </tbody>
-    </table>
-</div>
 
 <!--
    <?php //echo "Seja Bem-Vindo, " . $pri = explode(" ", $nome)[0]; ?>
