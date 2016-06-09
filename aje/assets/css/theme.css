@@ -49,6 +49,10 @@ section hr {
 /*  MENU TOPO
 ------------------------------------------------------------------------------*/
 
+#nav-top-section {
+    background: #236E47;
+}
+
 #nav-top {
     font-size: 10pt;
     text-transform: uppercase;
@@ -57,6 +61,10 @@ section hr {
 
 #nav-top ul li {
     border-right: 1px solid #e7e7e7;
+}
+
+#nav-top ul li a {
+    color: #fff;
 }
 
 ul.nav.nav-pills.navbar-right li a:hover {
@@ -179,7 +187,7 @@ header a.navbar-brand {
 
 #newsletter {
     background-image: linear-gradient(to bottom, #fff, #D9EDF7);
-    padding: 10% 0;
+    padding: 5% 0;
     text-align: center;
 }
 
