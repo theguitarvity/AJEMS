@@ -1,12 +1,13 @@
 <?php
 session_start();
-
-if ($_SESSION['logado'] != 1) {
-    ?>
-    <script type="text/javascript">
-        document.location.href = "login.php";
-    </script>
-    <?php
+if(isset($_SESSION['logado'])) {
+    if ($_SESSION['logado'] != 1) {
+        ?>
+        <script type="text/javascript">
+            document.location.href = "login.php";
+        </script>
+        <?php
+    }
 }
 ?>
 
@@ -49,8 +50,10 @@ $cadastros_page = "templates/users.php";
 <?php
 require_once ("classes/Persistencia/DAO/ConnectionFactory.php");
 require_once("classes/Persistencia/DAO/UsuarioDAO.php");
+require_once("classes/Persistencia/DAO/SlideDAO.php");
 
 $dao = new UsuarioDAO();
+$slideDAO = new SlideDAO();
 $conn = new ConnectionFactory();
 $pdo = $conn->Connect();
 if (isset($_SESSION['userID'])) {
@@ -79,7 +82,7 @@ if (isset($_SESSION['userID'])) {
         <meta name="author" content="">
         <link rel="icon" href="../../favicon.ico">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><!--importanto as fontes e os incones do fonts awesome-->
-		
+
 
         <title>Área de administração AJE-MS</title>
 
@@ -141,30 +144,30 @@ if (isset($_SESSION['userID'])) {
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
-<?php require $menu; ?>
+                    <?php require $menu; ?>
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 
-<?php
-switch ($page) {
-    case "home" :
-        require $home_page;
-        break;
-    case "layout":
-        require $layout_page;
-        break;
-    case "settings":
-        require $settings_page;
-        break;
-    case "users":
-        require $cadastros_page;
-        break;
-    default :
-        echo '<h2>Página não encontrada</h2>';
-        break;
-}
-?>
+                    <?php
+                    switch ($page) {
+                        case "home" :
+                            require $home_page;
+                            break;
+                        case "layout":
+                            require $layout_page;
+                            break;
+                        case "settings":
+                            require $settings_page;
+                            break;
+                        case "users":
+                            require $cadastros_page;
+                            break;
+                        default :
+                            echo '<h2>Página não encontrada</h2>';
+                            break;
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -188,7 +191,7 @@ if (isset($_GET["acao"])) {
         $_SESSION['logado'] = 0;
         ?>
         <script type="text/javascript">
-            document.location.href = "login.php";
+        document.location.href = "login.php";
         </script>
         <?php
     }

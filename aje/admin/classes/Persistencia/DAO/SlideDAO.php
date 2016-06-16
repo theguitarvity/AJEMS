@@ -25,7 +25,7 @@ class SlideDAO {
         }
     }
 
-    function insert(Slide $slide) {
+    /*function insert(Slide $slide) {
         try {
             $stmt = $this->pdo->prepare("INSERT INTO slide(nome_slide,caminho_slide, data) VALUES(:nome, :caminho, NOW())");
             $param = array(
@@ -37,6 +37,22 @@ class SlideDAO {
         } catch (PDOException $ex) {
             echo $ex->getMessage();
         }
-    }
+    }*/
+ function delete($idSlide){
+     try{
+         $stmt = $this->pdo->prepare("DELETE FROM imagem WHERE idImagem = :id");
+         $param = array(
+             ":id"=>$idSlide
+         );
+         $stmt->execute($param);
+         
+         
+     } catch (PDOException $ex) {
+         echo $ex->getMessage();
+
+     }
+ }
+    
+    
 
 }
