@@ -1,3 +1,8 @@
+<?php
+include_once("admin/classes/Persistencia/DAO/ConnectionFactory.php");
+$conn = new ConnectionFactory();
+$pdo = $conn->Connect();
+?>
 <html lang="pt-br">
 
     <head>
@@ -42,17 +47,14 @@
                     }
                 });
             }); // ]]>
-
             $(document).on('ready', function () {
                 var winHeight = $(window).height(),
                         docHeight = $(document).height(),
                         progressBar = $('progress'),
                         max, value;
-
                 /* Set the max scrollable area */
                 max = docHeight - winHeight;
                 progressBar.attr('max', max);
-
                 $(document).on('scroll', function () {
                     value = $(window).scrollTop();
                     progressBar.attr('value', value);
@@ -61,11 +63,9 @@
                     } else {
                         $("#to-top").hide("slow");
                     }
-
                     if (value > 33) {
                         $("#header").addClass("navbar-fixed-top");
-                    }
-                    else {
+                    } else {
                         $("#header").removeClass("navbar-fixed-top");
                     }
                 });
@@ -119,9 +119,7 @@
         <div id="to-top"><a href="#nav-top" class="menu-link"><span class="fa fa-chevron-up" style="font-size: 2em"/></a></div>
 
 
-        <!-- SLIDE
-        ----------------------------------------------------------------------->
-
+        <!-- SLIDE---------------------------------------------------------------------->
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -130,36 +128,51 @@
                 <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner" role="listbox">
+                <?php
+                $query = $pdo->query("SELECT * FROM imagem WHERE ordem=1");
+                $linhaOrdem1 = $query->fetch(PDO::FETCH_ASSOC);
+                if ($query->rowCount() > 0) {
+                ?>
+
                 <div class="item active">
-                    <img class="first-slide" src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/13179204_1033086236757977_4456101136849385387_n.jpg?oh=7cede92111c7b2bf919d78602714e7c3&oe=57E6650D" alt="First slide">
+                    <img class="first-slide" alt="First slide" src=<?php echo "admin/img/slides/" . $linhaOrdem1['arquivo']; ?> >
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Example headline.</h1>
-                            <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+                            <h1><?php echo $linhaOrdem1['titulo']; ?></h1>
+                            <p><?php echo $linhaOrdem1['descricao']; ?></p>
                             <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
                         </div>
                     </div>
                 </div>
+                <?php
+                }
+                ?>
+
+                <?php
+                $queryRes = $pdo->query("SELECT * FROM imagem");
+
+
+                while ($linhaRes = $queryRes->fetch(PDO::FETCH_ASSOC)) {
+                ?>
+
                 <div class="item">
-                    <img class="second-slide" src="https://pixabay.com/static/uploads/photo/2016/05/29/20/44/communion-1423787_960_720.jpg" alt="Second slide">
+                    <img class="first-slide" alt="First slide" src=<?php echo "admin/img/slides/" . $linhaRes['arquivo']; ?> >
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Another example headline.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                            <h1><?php echo $linhaRes['titulo']; ?></h1>
+                            <p><?php echo $linhaRes['descricao']; ?></p>
+                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>One more for good measure.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-                        </div>
-                    </div>
-                </div>
+
+                <?php
+                }
+                
+                ?>
+
+
+
             </div>
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -196,7 +209,6 @@
 
         <!-- INFOS
         ----------------------------------------------------------------------->
-
         <section id="infos">
             <div>
                 <div class="container">
@@ -222,7 +234,6 @@
                     </div>
                 </div>
             </div>
-
         </section>  <!-- /INFOS -->   
 
 
@@ -314,7 +325,7 @@
         </section>
 
         <hr/>
-        
+
         <section id="associados" class="container">
             <h3 class="h1" style="text-align:center">Diretoria</h3>
             <hr/>
@@ -324,139 +335,138 @@
                     <div class="col-md-2">
                         <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p160x160/10846018_817795644943416_1315452325231480922_n.jpg?oh=895a74a2f937fd57353ca6b7c32be305&oe=57D44A27&__gda__=1476613708_9ec1754df3264ed4bfc2d148931330d9"  class="img-responsive img-circle" alt="Responsive image">
                         <h3>Diego Antonio<h3>
-                    </div>
-                    <div class="col-md-2">
-                        <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p160x160/10846018_817795644943416_1315452325231480922_n.jpg?oh=895a74a2f937fd57353ca6b7c32be305&oe=57D44A27&__gda__=1476613708_9ec1754df3264ed4bfc2d148931330d9"  class="img-responsive img-circle" alt="Responsive image">
-                        <h3>Diego Antonio<h3>
-                    </div>
-                    <div class="col-md-2">
-                        <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p160x160/10846018_817795644943416_1315452325231480922_n.jpg?oh=895a74a2f937fd57353ca6b7c32be305&oe=57D44A27&__gda__=1476613708_9ec1754df3264ed4bfc2d148931330d9"  class="img-responsive img-circle" alt="Responsive image">
-                        <h3>Diego Antonio<h3>
-                    </div>
-                    <div class="col-md-2">
-                        <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p160x160/10846018_817795644943416_1315452325231480922_n.jpg?oh=895a74a2f937fd57353ca6b7c32be305&oe=57D44A27&__gda__=1476613708_9ec1754df3264ed4bfc2d148931330d9"  class="img-responsive img-circle" alt="Responsive image">
-                        <h3>Diego Antonio<h3>
-                    </div>
-                    <div class="col-md-2">
-                        <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p160x160/10846018_817795644943416_1315452325231480922_n.jpg?oh=895a74a2f937fd57353ca6b7c32be305&oe=57D44A27&__gda__=1476613708_9ec1754df3264ed4bfc2d148931330d9"  class="img-responsive img-circle" alt="Responsive image">
-                        <h3>Diego Antonio<h3>
-                    </div>
-                    <div class="col-md-2">
-                        <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p160x160/10846018_817795644943416_1315452325231480922_n.jpg?oh=895a74a2f937fd57353ca6b7c32be305&oe=57D44A27&__gda__=1476613708_9ec1754df3264ed4bfc2d148931330d9"  class="img-responsive img-circle" alt="Responsive image">
-                        <h3>Diego Antonio<h3>
-                    </div>
-                </div>
-                <br/>
-                <div class="col-md-12">
-                    <p class="lead"><a class="btn btn-lg btn-success disabled" href="#">Veja mais</a></p>
-                </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p160x160/10846018_817795644943416_1315452325231480922_n.jpg?oh=895a74a2f937fd57353ca6b7c32be305&oe=57D44A27&__gda__=1476613708_9ec1754df3264ed4bfc2d148931330d9"  class="img-responsive img-circle" alt="Responsive image">
+                                    <h3>Diego Antonio<h3>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p160x160/10846018_817795644943416_1315452325231480922_n.jpg?oh=895a74a2f937fd57353ca6b7c32be305&oe=57D44A27&__gda__=1476613708_9ec1754df3264ed4bfc2d148931330d9"  class="img-responsive img-circle" alt="Responsive image">
+                                                <h3>Diego Antonio<h3>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p160x160/10846018_817795644943416_1315452325231480922_n.jpg?oh=895a74a2f937fd57353ca6b7c32be305&oe=57D44A27&__gda__=1476613708_9ec1754df3264ed4bfc2d148931330d9"  class="img-responsive img-circle" alt="Responsive image">
+                                                            <h3>Diego Antonio<h3>
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p160x160/10846018_817795644943416_1315452325231480922_n.jpg?oh=895a74a2f937fd57353ca6b7c32be305&oe=57D44A27&__gda__=1476613708_9ec1754df3264ed4bfc2d148931330d9"  class="img-responsive img-circle" alt="Responsive image">
+                                                                        <h3>Diego Antonio<h3>
+                                                                                </div>
+                                                                                <div class="col-md-2">
+                                                                                    <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p160x160/10846018_817795644943416_1315452325231480922_n.jpg?oh=895a74a2f937fd57353ca6b7c32be305&oe=57D44A27&__gda__=1476613708_9ec1754df3264ed4bfc2d148931330d9"  class="img-responsive img-circle" alt="Responsive image">
+                                                                                    <h3>Diego Antonio<h3>
+                                                                                            </div>
+                                                                                            </div>
+                                                                                            <br/>
+                                                                                            <div class="col-md-12">
+                                                                                                <p class="lead"><a class="btn btn-lg btn-success disabled" href="#">Veja mais</a></p>
+                                                                                            </div>
 
-            </center>
+                                                                                            </center>
 
-        </section>
+                                                                                            </section>
 
-        <hr/>
+                                                                                            <hr/>
 
-        <section id="newsletter">
-            <div class="container">
-                <h3 class="h1" style="text-align:center">Assine nosso newsletter</h3>
-                <hr />
-                <form class="form-horizontal">
-                    <div class="form-group">
+                                                                                            <section id="newsletter">
+                                                                                                <div class="container">
+                                                                                                    <h3 class="h1" style="text-align:center">Assine nosso newsletter</h3>
+                                                                                                    <hr />
+                                                                                                    <form class="form-horizontal">
+                                                                                                        <div class="form-group">
 
-                        <div class="col-md-offset-2 col-sm-6">
-                            <input type="email" class="form-control" id="inputEmail3" placeholder="joaodasilva@mailbox.com">
-                        </div>
-                        <div for="inputEmail3" class="col-sm-2">
-                            <button style="width: 100%" type="submit" class="btn btn-success">Enviar</button>
-                        </div>
-                    </div>
-                </form>
+                                                                                                            <div class="col-md-offset-2 col-sm-6">
+                                                                                                                <input type="email" class="form-control" id="inputEmail3" placeholder="joaodasilva@mailbox.com">
+                                                                                                            </div>
+                                                                                                            <div for="inputEmail3" class="col-sm-2">
+                                                                                                                <button style="width: 100%" type="submit" class="btn btn-success">Enviar</button>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </form>
 
-            </div>
-        </section>
-
-
-
-        <footer class="container-fluid">
-
-            <script>
-                // Primeiro ano da AJE-MS
-                var s_year = 2011;
-                // Ano atual        
-                var a_year = new Date().getYear() + 1900;
-
-                var years = (s_year == a_year) ? s_year : s_year + " &mdash; " + a_year;
-            </script>
-
-            <div class="container">
-                <div class="col-md-4">
-                    <h3>Facebook</h3>
-                    <div class="fb-page" data-href="https://www.facebook.com/aje.matogrossodosul" data-tabs="eventos" data-small-header="false"
-                         data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                        <div class="fb-xfbml-parse-ignore">
-                            <blockquote cite="https://www.facebook.com/aje.matogrossodosul"><a href="https://www.facebook.com/aje.matogrossodosul">Aje-MS</a></blockquote>
-                        </div>
-                    </div>
-                </div> <!-- / facebook widget -->
-
-                <div class="col-md-4">
-                    <h3>Contatos</h3>
-                    <p><i class="fa fa-map-marker"></i> Av. Afonso Pena, 5723 &mdash; Sala 1504 &mdash; CEP 79.031-010</p>
-                    <p><i class="glyphicon glyphicon-phone-alt"></i> +55 (67) 3201.2137</p>
-                    <p><i class="glyphicon glyphicon-phone"></i> +55 (67) 992.949.351</p>
-                </div>
-
-                <div class="col-md-4">
-                    <h3>Redes Sociais</h3>
-                    <p><i class="fa fa-envelope"></i> example@example.com</p>
-                    <p><i class="fa fa-facebook"></i>/aje.matogrossodosul</p>
-                    <p><i class="fa fa-instagram"></i>/aje.matogrossodosul</p>
-                    <p><i class="fa fa-linkedin"></i>/aje.matogrossodosul</p>
-                </div>
-
-            </div>
-            <br />
-            <br />
-            <div class="container">
-                <div class="col-md-6">
-                    <p>Copyright &copy;
-                        <script>
-                            document.write(years);
-                        </script> Associação dos Jovens Empreendedores.</p>
-                </div>
-                <div class="col-md-6">
-                    <p class="text-right">Desenvolvido com &hearts; por <a href="http://bytegod.com.br"><img width="25px" src="assets/img/bg.png" /> ByteGod IT Solutions</a>.</p>
-                </div>
-            </div>
-
-        </footer>
+                                                                                                </div>
+                                                                                            </section>
 
 
 
-        <div id="fb-root"></div>
-        <script>(function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id))
-                    return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.6&appId=1432431656988526";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
+                                                                                            <footer class="container-fluid">
+
+                                                                                                <script>
+                                                                                                    // Primeiro ano da AJE-MS
+                                                                                                    var s_year = 2011;
+                                                                                                    // Ano atual        
+                                                                                                    var a_year = new Date().getYear() + 1900;
+                                                                                                    var years = (s_year == a_year) ? s_year : s_year + " &mdash; " + a_year;
+                                                                                                </script>
+
+                                                                                                <div class="container">
+                                                                                                    <div class="col-md-4">
+                                                                                                        <h3>Facebook</h3>
+                                                                                                        <div class="fb-page" data-href="https://www.facebook.com/aje.matogrossodosul" data-tabs="eventos" data-small-header="false"
+                                                                                                             data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                                                                                            <div class="fb-xfbml-parse-ignore">
+                                                                                                                <blockquote cite="https://www.facebook.com/aje.matogrossodosul"><a href="https://www.facebook.com/aje.matogrossodosul">Aje-MS</a></blockquote>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div> <!-- / facebook widget -->
+
+                                                                                                    <div class="col-md-4">
+                                                                                                        <h3>Contatos</h3>
+                                                                                                        <p><i class="fa fa-map-marker"></i> Av. Afonso Pena, 5723 &mdash; Sala 1504 &mdash; CEP 79.031-010</p>
+                                                                                                        <p><i class="glyphicon glyphicon-phone-alt"></i> +55 (67) 3201.2137</p>
+                                                                                                        <p><i class="glyphicon glyphicon-phone"></i> +55 (67) 992.949.351</p>
+                                                                                                    </div>
+
+                                                                                                    <div class="col-md-4">
+                                                                                                        <h3>Redes Sociais</h3>
+                                                                                                        <p><i class="fa fa-envelope"></i> example@example.com</p>
+                                                                                                        <p><i class="fa fa-facebook"></i>/aje.matogrossodosul</p>
+                                                                                                        <p><i class="fa fa-instagram"></i>/aje.matogrossodosul</p>
+                                                                                                        <p><i class="fa fa-linkedin"></i>/aje.matogrossodosul</p>
+                                                                                                    </div>
+
+                                                                                                </div>
+                                                                                                <br />
+                                                                                                <br />
+                                                                                                <div class="container">
+                                                                                                    <div class="col-md-6">
+                                                                                                        <p>Copyright &copy;
+                                                                                                            <script>
+                                                                                                                document.write(years);
+                                                                                                            </script> Associação dos Jovens Empreendedores.</p>
+                                                                                                    </div>
+                                                                                                    <div class="col-md-6">
+                                                                                                        <p class="text-right">Desenvolvido com &hearts; por <a href="http://bytegod.com.br"><img width="25px" src="assets/img/bg.png" /> ByteGod IT Solutions</a>.</p>
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </footer>
 
 
 
-        <script>
-            window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
-        </script>
-        <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-        <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-        <script src="http://getbootstrap.com/assets/js/vendor/holder.min.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="http://getbootstrap.com/assets/js/ie10-viconfiewport-bug-workaround.js"></script>
+                                                                                            <div id="fb-root"></div>
+                                                                                            <script>(function (d, s, id) {
+                                                                                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                                                                                    if (d.getElementById(id))
+                                                                                                        return;
+                                                                                                    js = d.createElement(s);
+                                                                                                    js.id = id;
+                                                                                                    js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.6&appId=1432431656988526";
+                                                                                                    fjs.parentNode.insertBefore(js, fjs);
+                                                                                                }(document, 'script', 'facebook-jssdk'));</script>
 
-        <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.1.4/scrollreveal.min.js"></script>
-    </body>
 
-</html>
+
+                                                                                            <script>
+                                                                                                window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+                                                                                            </script>
+                                                                                            <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+                                                                                            <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+                                                                                            <script src="http://getbootstrap.com/assets/js/vendor/holder.min.js"></script>
+                                                                                            <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+                                                                                            <script src="http://getbootstrap.com/assets/js/ie10-viconfiewport-bug-workaround.js"></script>
+
+                                                                                            <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.1.4/scrollreveal.min.js"></script>
+                                                                                            </body>
+
+                                                                                            </html>
