@@ -143,42 +143,37 @@ if (isset($_FILES['arquivo'])) {
 <section class="container-fluid">
     <div class="row">
         <h3 class="page-header" style="text-align:center">Informações referentes a AJE-MS</h3>
-        <form id="inserirSlide" method="post" enctype="multipart/form-data">
+        <form id="inserirInfos" method="post" action="#">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="titulo1" value="O que é a AJE-MS?"/>
+                        <textarea class="form-control" rows="6">É uma entidade classista, sem fins lucrativos, que possui como objetivos o fomento e a difusão da cultura empreendedora e a formação de novas lideranças que visem a representação do jovem empreendedor."</textarea>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="titulo1" value="Qual o nosso objetivo ?"/>
+                        <textarea class="form-control" rows="6">Contribuir com a formação de novas lideranças no meio empresarial, através de eventos voltados ao desenvolvimento dos nossos associados, e disseminar a cultura empreendedora ao público em geral.</textarea>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="titulo1" value="O que fazemos ?"/>
+                        <textarea class="form-control" rows="6">Realizamos eventos e promovemos missões empresariais e cursos que congregam nossos associados, voltados a contribuir para a sua formação como líderes, além de promovermos ações de cunho social."</textarea>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="titulo1" value="Como associar-se ?"/> 
+                        <textarea class="form-control" rows="6">Preencha o formulário e efetue o pagamento da sua taxa de associação. Direcionado aos jovens empreendedores ou intra-empreendedores, empresários ou universitário inspirados pela desejo de transformação e de conexão ao ambiente empreendedor."</textarea>
+                    </div>
+                </div>
+            </div>
 
-            <button class="btn btn-success" id="btn_inserirInformacao" name="btn_add" onclick="inserirInformacao()">Inserir informação</button>
-            <script>
-                function inserirInformacao() {
-                    /*
+            <button class="btn btn-success">Submit</button>
 
-                    var _html = "<h4>Inserir Slide</h4>";
-
-                    _html += "<input type=\"file\" required name=\"arquivo\" placeholder=\"Título do Slide\" class=\"file-loading\"><br />";
-                    _html += "<input type=\"text\" name=\"titulo\" placeholder=\"Título do Slide\" class=\"form-control\"><br />";
-                    _html += "<input type=\"text\" name=\"descricao\" placeholder=\"descricao\" class=\"form-control\"><br />";
-                    _html += "<label>Ordem de apresentação</label><br />";
-                    _html += "<input type=\"number\" name=\"ordem\" style=\"width:10%;\" class=\"form-control\"><br />";
-
-
-
-                    _html += "<button class=\"btn btn-info\" name=\"inserir\">Enviar</button>"
-                    _html += "&nbsp;&nbsp;&nbsp;<a class=\"btn btn-warning\" href=\"?page=layout\">Cancelar</a>"
-
-                    document.getElementById("inserirSlide").innerHTML = _html;
-
-                    document.getElementById("btn_inserirSlide").style.display = "none";*/
-                }
-            </script>
-            <h4>
-                <?php
-                if ($msg != false) {
-                    echo $msg;
-                }
-                ?>
-            </h4>
         </form>
-
-
-
     </div>
 </section>
 <section class="container-fluid">
